@@ -1,6 +1,6 @@
 <a href="https://chat.vercel.ai/">
-  <img alt="Next.js 13 and app template Router-ready AI chatbot." src="https://chat.vercel.ai/opengraph-image.png" />
-  <h1 align="center">Next.js AI Chatbot</h1>
+  <img alt="ZOO AI chatbot." src="https://chat.zoolabs.io/opengraph-image.png" />
+  <h1 align="center">ZOO AI Chatbot</h1>
 </a>
 
 <p align="center">
@@ -42,7 +42,8 @@ You can deploy your own version of the Next.js AI Chatbot to Vercel with one cli
 
 ### Set up GitHub OAuth
 
-This demo uses GitHub Oauth. Follow the [GitHub OAuth setup steps](https://supabase.com/docs/guides/auth/social-login/auth-github) on your Supabase project.
+This demo uses GitHub Oauth. Follow the [GitHub OAuth setup steps](
+https://supabase.com/docs/guides/auth/social-login/auth-github) on your Supabase project.
 
 ### Configure your site url
 
@@ -76,11 +77,3 @@ pnpm dev
 
 Your app template should now be running on [localhost:3000](http://localhost:3000/).
 
-## Authors
-
-This library is created by [Vercel](https://vercel.com) and [Next.js](https://nextjs.org) team members, with contributions from:
-
-- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer)) - [Vercel](https://vercel.com)
-- Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
-- shadcn ([@shadcn](https://twitter.com/shadcn)) - [Contractor](https://shadcn.com)
-- Thor Schaeff ([@thorwebdev](https://twitter.com/thorwebdev)) - [Supabaseifier](https://thor.bio)
