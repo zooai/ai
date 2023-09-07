@@ -76,3 +76,20 @@
     @apply bg-background text-foreground;
   }
 }
+/* scrollbar.css */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as per your preference */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000; /* Adjust the background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1; /* Adjust the thumb color */
+  border-radius: 4px; /* Adjust the border radius */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Adjust the thumb color on hover */
+}

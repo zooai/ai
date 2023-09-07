@@ -380,6 +380,7 @@ function IconDownload({ className, ...props }: React.ComponentProps<'svg'>) {
   )
 }
 
+
 function IconClose({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
