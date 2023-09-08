@@ -19,7 +19,7 @@ import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 // import { cookies } from 'next/headers'
 import Image from 'next/image'
-import iconImage from '../public/zooLogo.svg'
+import iconImage from '../public/ZOO.png'
 function Header() {
   // const cookieStore = cookies()
   // const session = await auth({ cookieStore })
