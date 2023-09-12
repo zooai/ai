@@ -93,3 +93,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555; /* Adjust the thumb color on hover */
 }
+
+model-viewer {
+  width:inherit;
+  height:inherit;
+  background-color: transparent;
+    --poster-color: transparent;
+    --progress-mask: #000;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+  
+}
