@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Toaster />
-        <Providers attribute="class" defaultTheme="system" enableSystem>
+        <Providers attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen flex-col">
             {/* @ts-ignore */}
             {/* <Header /> */}
