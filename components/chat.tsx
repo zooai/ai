@@ -49,7 +49,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       }
     })
   return (
-    <>
+    <div className="bg-cover bg-[url('../public/bg_chat.png')] min-h-[calc(100vh-64px)]">
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
         {messages.length ? (
           <>
@@ -106,6 +106,6 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   )
 }
