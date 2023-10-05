@@ -7,64 +7,9 @@ const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
   ssr: false,
 });
 
-const animals = [
-  {
-    usdz: "/models/Wolf/WOLF_ADULT.usdz",
-    glb: "/models/Wolf/WOLF_ADULT.glb",
-    url: "/animals/red_wolf",
-    name: "Red Wolf",
-    index: 0
-  },
-  {
-    usdz: "/models/Giraffe/GIRAFFE_ADULT.usdz",
-    glb: "/models/Giraffe/GIRAFFE_ADULT.glb",
-    url: "/animals/nubian_giraffe",
-    name: "Nubian Giraffe",
-    index: 1
-  },
-  {
-    usdz: "/models/Leopard/LEOPARD_ADULT.usdz",
-    glb: "/models/Leopard/LEOPARD_ADULT.glb",
-    url: "/animals/amur_leopard",
-    name: "Amur Leopard",
-    index: 2
-  },
-  {
-    usdz: "/models/Elephant/ELEPHANT_ADULT.usdz",
-    glb: "/models/Elephant/ELEPHANT_ADULT.glb",
-    url: "/animals/sumatran_elephant",
-    name: "Sumatran Elephant",
-    index: 3
-  },
-  {
-    usdz: "/models/Tiger/TIGER_ADULT.usdz",
-    glb: "/models/Tiger/TIGER_ADULT.glb",
-    url: "/animals/siberian_tiger",
-    name: "Siberian Tiger",
-    index: 4
-  },
-  {
-    usdz: "/models/Hippo/HIPPO_ADULT.usdz",
-    glb: "/models/Hippo/HIPPO_ADULT.glb",
-    url: "/animals/pygmy_hippo",
-    name: "Pygmy Hippo",
-    index: 5
-  },
-  {
-    usdz: "/models/Rhino/RHINO_ADULT.usdz",
-    glb: "/models/Rhino/RHINO_ADULT.glb",
-    url: "/animals/javan_rhino",
-    name: "Javan Rhino",
-    index: 6
-  }
-];
 
 function Top() {
-  const [animal ,setAnimal] = useState(animals[3]);
-  const link = () => {
-    window.location.href = animals[animal.index].url;
-  };
-  
+    
   return (<>
     <div className="bg-[length:100%_100%] bg-[url('../public/bg_top.png')] pt-[80px] max-md:hidden block">
       <div className='flex max-md:flex-col items-center justify-between max-md:pt-8'>
@@ -82,8 +27,8 @@ function Top() {
                 alt=''
             /> */}
             <ModelViewer  className='float-right max-md:h-[190px] aspect-square'
-              usdz={animal.usdz}
-              glb={animal.glb}
+              usdz='/models/Elephant/ELEPHANT_ADULT.usdz'
+              glb="/models/Elephant/ELEPHANT_ADULT.glb"
             ></ModelViewer>
         </div>
       </div>
