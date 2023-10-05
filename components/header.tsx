@@ -11,7 +11,7 @@ function Header() {
   };
 
   return (
-      <nav className="fixed w-full bg-black/10 z-10">
+      <nav className="absolute w-full bg-transparent z-10">
         <div className="max-md:fixed max-md:w-full max-md:left-0 max-md:z-[999] max-md:bg-black px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center justify-between h-20">
               <div className="md:hidden">

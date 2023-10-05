@@ -104,3 +104,10 @@ model-viewer {
     -webkit-tap-highlight-color: rgba(255,255,255,0);
   
 }
+.button-gradient {
+  background: linear-gradient(165deg, rgb(61,61,194) 0%, rgba(135, 135, 255, 1) 100%);
+  cursor: pointer;
+}
+.bg-gradient {
+  background: linear-gradient(165deg, rgb(61,61,194) 0%, rgba(135, 135, 255, 1) 100%);
+}
