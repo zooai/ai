@@ -49,8 +49,11 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       }
     })
   return (
-    <div className="bg-cover bg-[url('../public/bg_chat.png')] min-h-[calc(100vh-64px)]">
-      <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
+    <div className="relative h-[calc(100vh-64px)]">
+      <video autoPlay loop muted playsInline className="w-full h-full object-cover absolute -z-10">
+        <source src="bg_chat.mp4"  type="video/mp4"/>
+      </video>
+      <div className={cn('pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto', className)}>
         {messages.length ? (
           <>
             <ChatList messages={messages} />
