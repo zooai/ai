@@ -3,9 +3,9 @@ import Image from 'next/image'
 function ReviewPanel({title,content,company,name,avatar}: {
     title: string;
     content: string;
-    company: string;
+    company: any;
     name: string;
-    avatar: string;
+    avatar: any;
   }) {
     
     return (
@@ -15,7 +15,7 @@ function ReviewPanel({title,content,company,name,avatar}: {
             <div className="flex items-center justify-between">
                 <Image
                     className='h-full'
-                    src={`/${company}`}
+                    src={company}
                     width='118'
                     height='50'
                     alt=''
@@ -23,7 +23,7 @@ function ReviewPanel({title,content,company,name,avatar}: {
                 <div className='bg-[#212830] rounded-lg flex items-center py-2 px-4 space-x-2'>
                     <Image
                         className='h-[25px]'
-                        src={`/${avatar}`}
+                        src={avatar}
                         width='25'
                         height='25'
                         alt=''

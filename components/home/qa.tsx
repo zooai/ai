@@ -75,7 +75,7 @@ function QAList() {
     return (
       <div className='bg-black p-32'>
         <p className='text-5xl text-center'>Frequently Asked Questions</p>
-        <div className='mt-12 flex flex-col space-y-4'>
+        <div className='mt-12 flex flex-col'>
             {
                 contents.map((data, index) => (
                     <QA title={data.title} content={data.content}/>
