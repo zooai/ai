@@ -46,7 +46,7 @@ function Header() {
                   </button>
               </div>
               <div className="flex items-center max-md:ml-[36px]">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
 
                   <Link
                       href="/"
@@ -93,7 +93,7 @@ function Header() {
                   >
                       Log In / Sign Up
                   </Link>
-                  
+
               </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ function Header() {
               >
                 Animals
               </Link>
-              
+
               <Link
                 href="/about"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
