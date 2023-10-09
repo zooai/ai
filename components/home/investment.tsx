@@ -2,6 +2,7 @@
 import React,{useState} from "react";
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
+import money_icon from '../../public/money_icon.png'
 import { FaAngleRight } from 'react-icons/fa'
 import Image from 'next/image'
 function Investment() {
@@ -76,7 +77,7 @@ function Investment() {
                   <span>$</span>
                   <Image
                         className='h-[50px]'
-                        src='/money_icon.png'
+                        src={money_icon}
                         width='50'
                         height='50'
                         alt=''
