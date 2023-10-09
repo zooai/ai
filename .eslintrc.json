@@ -8,7 +8,10 @@
   ],
   "plugins": ["tailwindcss"],
   "rules": {
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/enforces-shorthand": "off",
+    "tailwindcss/classnames-order": "off",
+    "react/jsx-key": "off"
   },
   "settings": {
     "tailwindcss": {
