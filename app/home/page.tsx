@@ -10,6 +10,8 @@ import Plans from '@/components/home/plans'
 import Review from '@/components/home/review'
 import Investment from '@/components/home/investment'
 import QAList from '@/components/home/qa'
+import SubFooter from '@/components/home/sub_footer'
+import Footer from '@/components/home/footer'
 export default async function SignInPage() {
   return (
     <div className='bg-black flex flex-col'>
@@ -26,6 +28,8 @@ export default async function SignInPage() {
     <Review />
     <Investment />
     <QAList />
+    <SubFooter />
+    <Footer />
     </div>
   )
 }
