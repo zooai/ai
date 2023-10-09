@@ -19,7 +19,7 @@ const contents = [
     },
     {
         title: "Basically Everyone",
-        content: "Who says AI is only for tech gurus and digital wizards? Anyone can streamline their content creation process and deliver exceptional results. Whether you're a blogger, copywriter, or social media influencer, Marve has everything you need to create content that truly stands out. So why wait?"
+        content: "Who says AI is only for tech gurus and digital wizards? Anyone can streamline their content creation process and deliver exceptional results. Whether you're a blogger, copywriter, or social media influencer, ZOO has everything you need to create content that truly stands out. So why wait?"
     },
 ]
 function Unleash() {
