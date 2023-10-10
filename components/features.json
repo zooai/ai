@@ -1,0 +1,32 @@
+[
+  {
+    "route": "listening",
+    "title": "Recall <span class='text-[#8787f7]'>Any Conversation</span><br/> with active listening.",
+    "description": "Always ready to hear your voice, it analyzes conversations to be referenced in the future, with the ability to turn on or off."
+  },
+  {
+    "route": "tools",
+    "title": "Streamline with <span class='text-[#8787f7]'>Professional Tools.</span>",
+    "description": "Professional tools designed with a touch of charm to brighten up your workday help with automating business tasks and general virtual assistance."
+  },
+  {
+    "route": "memory",
+    "title": "<span class='text-[#8787f7]'>Unlimited Memory</span> and Personalization.",
+    "description": "Train and choose from different adorable personality settings, with infinite memory and even team up multiple buddies to collaborate!"
+  },
+  {
+    "route": "dictate",
+    "title": "<span class='text-[#8787f7]'>Intelligent Comprehension</span> that you can Dictate.",
+    "description": "Managing emails, messages and automation has never been so enjoyable, thanks to its friendly interface, you say an actionable item and it gets to work!"
+  },
+  {
+    "route": "creative",
+    "title": "Creative Work Done <span class='text-[#8787f7]'>in Seconds</span>",
+    "description": "Whether its image generation, adapting pictures for social platforms, recognizing images, cropping, editing, etc. your Buddy executes effortlessly. "
+  },
+  {
+    "route": "lifestyle",
+    "title": "<span class='text-[#8787f7]'>Ai for everything</span> Lifestyle to Smart Home Tools.",
+    "description": "Automate your life with the cutest companion in tech, making daily routines more delightful, from smart home controls, to food delivery and hiring lifestyle services."
+  }
+]

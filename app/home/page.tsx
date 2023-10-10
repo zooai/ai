@@ -5,6 +5,7 @@ import StartButton from '@/components/home/start-button'
 import Analyze from '@/components/home/analyze'
 import Unleash from '@/components/home/unleash'
 import Solution from '@/components/home/solution'
+import Steps from '@/components/home/steps'
 import Tasks from '@/components/home/tasks'
 import Plans from '@/components/home/plans'
 import Review from '@/components/home/review'
@@ -23,6 +24,7 @@ export default async function SignInPage() {
     <StartButton />
     <Unleash />
     <Solution />
+    <Steps />
     <Tasks />
     <Plans />
     <Review />
