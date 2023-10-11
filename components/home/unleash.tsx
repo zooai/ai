@@ -24,15 +24,15 @@ const contents = [
 ]
 function Unleash() {
     return (
-      <div className='bg-black py-32 px-48 flex flex-col items-center'>
-        <p className='text-5xl text-center'>Unleash the power of <span className="text-[#8787f7]">GPT-4.</span></p>
+      <div className='bg-black py-32 max-md:py-24 px-48 max-md:px-4 flex flex-col items-center'>
+        <p className='text-5xl max-md:text-3xl text-center'>Unleash the power of <span className="text-[#8787f7]">GPT-4.</span></p>
         <p className="text-sm text-[#929292] pt-8 max-w-[600px] text-center">Create captivating SEO content for blog posts, articles, Facebook advertisements, Google Ads campaigns, Quora responses, and sales-related emails to boost click rates, lead generation, and boost sales revenue.</p>
-        <div className="max-w-[1200px] w-[80%] bg-[length:100%_100%] bg-[url('../public/bg_unleash.png')] p-24 flex mt-16 rounded-xl space-x-12">
-            <div className="flex flex-col w-[30%] space-y-2">
-                <p className='text-3xl'>We believe Ai is for <span className="text-[#8787f7]">everyone.</span></p>
-                <p className="text-xs">(Inluding your Grandparents)</p>
+        <div className="max-w-[1200px] w-[80%] max-md:w-full bg-[length:100%_100%] bg-[url('../public/bg_unleash.png')] p-24 max-md:p-8 flex max-md:flex-col mt-16 rounded-xl space-x-12 max-md:space-x-0">
+            <div className="flex flex-col w-[30%] max-md:w-full space-y-2">
+                <p className='text-3xl max-md:text-center max-md:text-2xl'>We believe Ai is for <span className="text-[#8787f7]">everyone.</span></p>
+                <p className="text-xs max-md:text-center">(Inluding your Grandparents)</p>
             </div>
-            <div className="flex flex-col w-[70%]">
+            <div className="flex flex-col w-[70%] max-md:w-full max-md:pt-8">
                 {
                     contents.map((data, index) => (
                         <Accordion title={data.title} content={data.content}/>

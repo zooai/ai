@@ -53,9 +53,9 @@ function Investment() {
       }
     };
     return (
-      <div className='bg-black py-32 px-64'>
-        <div className="flex items-center justify-between">
-            <div className="w-2/5 flex flex-col gap-4 pr-16">
+      <div className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
+        <div className="flex max-md:flex-col items-center justify-between">
+            <div className="w-2/5 max-md:w-full flex flex-col gap-4 pr-16 max-md:px-16 max-sm:px-8">
                 <p className='text-xs text-[#8d8d8e]'>Hours lost per week on distractions, context-switching, manual writing work, and automating repetitive tasks.</p>
                 <p className='text-lg'>{hour} Hours / week</p>
                 <CustomSlider valueLabelDisplay="auto" aria-label="sense slider" value={hour} step={1} onChange={handleHourChange} min={1} max={20} />
@@ -70,8 +70,8 @@ function Investment() {
                     <span className='text-xs text-[#8d8d8e]'>/hr</span>
                 </div>
             </div>
-            <div className="w-3/5 flex flex-col items-center border-l pl-16">
-                <div className='text-3xl'><span className='text-[#8787f7]'>Return</span> on investment</div>
+            <div className="w-3/5 max-md:w-full flex flex-col items-center border-l pl-16 max-md:border-none max-md:px-16 max-md:pt-16 max-sm:px-8">
+                <div className='text-3xl max-md:text-center'><span className='text-[#8787f7]'>Return</span> on investment</div>
                 <div className='text-sm'>Per month with ZOO AI</div>
                 <div className='text-5xl pt-5 flex items-center justify-center'>
                   <span>$</span>
