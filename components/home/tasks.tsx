@@ -10,16 +10,16 @@ function Tasks() {
     return (
       <div className='bg-black p-32'>
         <p className='text-5xl text-center'>Avoid the fatigue from <span className='text-[#8787F7]'>repetitive tasks</span><br />when you automate with Zoo Ai.</p>
-        <div className='flex px-8 pt-32 items-stretch justify-between gap-32'>
+        <div className='flex px-8 pt-32 items-start justify-between gap-32'>
             <div className='w-1/2 ml-16 justify-between flex flex-col items-center'>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
-                <div className='flex flex-col py-4 space-y-4'>
+                <div className='w-[1px] h-[150px] bg-[#929292]'></div>
+                <div className='flex flex-col py-8 space-y-4'>
                     <p className='text-3xl text-center'>ZOO AI Buddies <br />Your Animal Companion</p>
                     <p className='text-xs text-center'>Automating daily tasks like: Food Ordering, Business Tools, Recording + Transcribing, Lifestyle Support, and so much more!</p>
                 </div>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
+                <div className='w-[1px] h-[300px] bg-[#929292]'></div>
             </div>
-            <div className='w-1/2 mr-16'>
+            <div className='sticky top-0 w-1/2 mr-16'>
                 <Image
                     className='w-full'
                     src={task1}
@@ -29,8 +29,8 @@ function Tasks() {
                 />
             </div>
         </div>
-        <div className='flex px-8 pt-32 items-stretch justify-between gap-32'>
-            <div className='flex flex-col space-y-6 w-1/2 mr-16 py-8'>
+        <div className='flex px-8 pt-32 items-start justify-between gap-32'>
+            <div className='sticky top-0 flex flex-col space-y-6 w-1/2 mr-16 py-8'>
                 <Image
                     className='w-full'
                     src={task2}
@@ -47,24 +47,24 @@ function Tasks() {
                 </div>
             </div>
             <div className='w-1/2 ml-16 justify-between flex flex-col items-center'>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
-                <div className='flex flex-col py-4 space-y-4'>
+                <div className='w-[1px] h-[150px] bg-[#929292]'></div>
+                <div className='flex flex-col py-8 space-y-4'>
                     <p className='text-3xl text-center'>ZOO AI Buddies <br />Your Animal Companion</p>
                     <p className='text-xs text-center'>Automating daily tasks like: Food Ordering, Business Tools, Recording + Transcribing, Lifestyle Support, and so much more!</p>
                 </div>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
+                <div className='w-[1px] h-[300px] bg-[#929292]'></div>
             </div>
         </div>
-        <div className='flex px-8 pt-32 items-stretch justify-between gap-32'>
+        <div className='flex px-8 pt-32 items-start justify-between gap-32'>
             <div className='w-1/2 ml-16 justify-between flex flex-col items-center'>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
-                <div className='flex flex-col py-4 space-y-4'>
+                <div className='w-[1px] h-[150px] bg-[#929292]'></div>
+                <div className='flex flex-col py-8 space-y-4'>
                     <p className='text-3xl text-center'>ZOO AI Buddies <br />Your Animal Companion</p>
                     <p className='text-xs text-center'>Automating daily tasks like: Food Ordering, Business Tools, Recording + Transcribing, Lifestyle Support, and so much more!</p>
                 </div>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
+                <div className='w-[1px] h-[300px] bg-[#929292]'></div>
             </div>
-            <div className='flex flex-col space-y-6 w-1/2 mr-16 py-8'>
+            <div className='sticky top-0 flex flex-col space-y-6 w-1/2 mr-16 py-8'>
                 <Image
                     className='w-full'
                     src={task3}
@@ -81,8 +81,8 @@ function Tasks() {
                 </div>
             </div>
         </div>
-        <div className='flex px-8 pt-32 items-stretch justify-between gap-32'>
-            <div className='flex flex-col space-y-6 w-1/2 mr-16 py-8'>
+        <div className='flex px-8 pt-32 items-start justify-between gap-32'>
+            <div className='sticky top-0 flex flex-col space-y-6 w-1/2 mr-16 py-8'>
                 <Image
                     className='w-full'
                     src={task4}
@@ -99,12 +99,12 @@ function Tasks() {
                 </div>
             </div>
             <div className='w-1/2 ml-16 justify-between flex flex-col items-center'>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
-                <div className='flex flex-col py-4 space-y-4'>
+                <div className='w-[1px] h-[150px] bg-[#929292]'></div>
+                <div className='flex flex-col py-8 space-y-4'>
                     <p className='text-3xl text-center'>ZOO AI Buddies <br />Your Animal Companion</p>
                     <p className='text-xs text-center'>Automating daily tasks like: Food Ordering, Business Tools, Recording + Transcribing, Lifestyle Support, and so much more!</p>
                 </div>
-                <div className='w-[1px] h-1/2 bg-[#929292]'></div>
+                <div className='w-[1px] h-[300px] bg-[#929292]'></div>
             </div>
         </div>
       </div>
