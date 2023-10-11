@@ -25,8 +25,8 @@ function Header() {
   };
 
   return (
-      <nav className="absolute w-full bg-transparent z-10">
-        <div className="max-md:fixed max-md:w-full max-md:left-0 max-md:z-[999] max-md:bg-black px-4 sm:px-6 lg:px-8 xl:px-12">
+      <nav className="absolute w-full bg-transparent z-10 max-md:bg-black">
+        <div className="px-4 sm:px-6 lg:px-8 xl:px-12 ">
           <div className="flex items-center justify-between h-20">
               <div className="md:hidden">
                   <button
@@ -70,7 +70,7 @@ function Header() {
                   </div>
               </div>
               <div className="hidden md:block relative">
-                  <div className="mx-10 flex items-baseline xl:space-x-16 md:space-x-4 lg:space-x-8 2xl:space-x-20">
+                  <div className="mx-10 flex items-baseline xl:space-x-16 md:space-x-2 lg:space-x-8 2xl:space-x-20">
                     <div className=''  onMouseEnter={handleHover}  onMouseLeave={handleMouseLeave}>
                       <Link
                           href="/"
@@ -158,15 +158,14 @@ function Header() {
                   {/* Add more links here */}
                   </div>
               </div>
-              <div className='flex items-center space-x-1'>
+              
                   <Link
                       href="/sign-in"
-                      className="text-black hover:bg-gray-700 bg-white hover:text-white px-6 py-2 rounded-full text-sm font-medium  md:block mr-3"
+                      className="text-white hover:bg-gray-700 bg-transparent border border-white hover:text-black hover:bg-white px-3 py-2 rounded-full text-xs md:block mr-3"
                   >
                       Log In / Sign Up
                   </Link>
 
-              </div>
           </div>
         </div>
         {isOpen && (
