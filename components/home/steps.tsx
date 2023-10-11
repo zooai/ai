@@ -3,9 +3,9 @@ import Image from 'next/image'
 import step from '../../public/step.png'
 function Steps() {
     return (
-      <div className='bg-black py-32'>
-        <div className='flex px-36 items-stretch justify-between gap-24'>
-            <div className='w-1/2 flex flex-col justify-between'>
+      <div className='bg-black py-32 max-md:py-24'>
+        <div className='flex max-md:flex-col px-36 max-md:px-8 items-stretch justify-between gap-24'>
+            <div className='w-1/2 max-md:w-full flex flex-col justify-between gap-8'>
                 <p className='text-5xl'>Three <span className='text-[#8787F7]'>easy</span> steps!</p>
                 <div className='flex space-x-4 items-start'>
                     <div className="text-center bg-[length:100%_100%] bg-[url('../public/bg_mark.png')]"><p className='w-[40px] h-[40px] leading-[40px]'>1</p></div>
@@ -29,7 +29,7 @@ function Steps() {
                     </div>
                 </div>
             </div>
-            <div className='w-1/2 pl-24'>
+            <div className='w-1/2 pl-24 max-md:w-3/4 max-md:m-auto max-md:pl-0'>
                 <Image
                     className='w-full'
                     src={step}
