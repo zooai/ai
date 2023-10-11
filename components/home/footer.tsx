@@ -2,10 +2,10 @@
 import Link from 'next/link';
 function Footer() {
     return (
-      <div className='bg-black py-32 px-24'>
-        <p className='text-4xl font-bold'>ZOO AI</p>
-        <div className='flex pt-8 gap-16'>
-            <div className='flex flex-col w-1/4 border-b border-[#929293] pb-8'>
+      <div className='bg-black py-32 px-24 max-md:py-24 max-md:px-8'>
+        <p className='text-4xl max-md:text-3xl font-bold'>ZOO AI</p>
+        <div className='flex max-md:flex-col pt-8 gap-16'>
+            <div className='flex flex-col w-1/4 max-md:w-full border-b border-[#929293] pb-8'>
                 <p className='text-lg font-bold border-b border-[#929293]'>Info</p>
                 <div className='flex pt-6 gap-8'>
                     <div className='w-1/2 flex flex-col gap-3'>
@@ -28,7 +28,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-col w-1/4 border-b border-[#929293] pb-8'>
+            <div className='flex flex-col w-1/4 max-md:w-full border-b border-[#929293] pb-8'>
                 <p className='text-lg font-bold border-b border-[#929293]'>Products</p>
                 <div className='pt-6 flex flex-col gap-3'>
                     <Link href='/' className='text-[#929293] hover:text-white text-sm'>Zoo Buddies - Cutest AI Ever</Link>
@@ -43,7 +43,7 @@ function Footer() {
                     <Link href='/' className='text-[#929293] hover:text-white text-sm'>AI Video</Link>
                 </div>
             </div>
-            <div className='flex flex-col w-1/6 border-b border-[#929293] pb-8'>
+            <div className='flex flex-col w-1/6 max-md:w-full border-b border-[#929293] pb-8'>
                 <p className='text-lg font-bold border-b border-[#929293]'>Compare</p>
                 <div className='pt-6 flex flex-col gap-3'>
                     <Link href='/' className='text-[#929293] hover:text-white text-sm'>Jasper.ai alternative</Link>
@@ -56,7 +56,7 @@ function Footer() {
                     <Link href='/' className='text-[#929293] hover:text-white text-sm'>Notion.so alternative</Link>
                 </div>
             </div>
-            <div className='flex flex-col w-1/3 border-b border-[#929293] pb-8'>
+            <div className='flex flex-col w-1/3 max-md:w-full border-b border-[#929293] pb-8'>
                 <p className='text-lg font-bold border-b border-[#929293]'>Latest Blogs</p>
                 <div className='pt-6 flex flex-col gap-3'>
                     <Link href='/' className='text-[#929293] hover:text-white text-sm'>AI in Email Marketing: Supercharge Open Rates &...</Link>

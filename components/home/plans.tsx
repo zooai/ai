@@ -106,10 +106,10 @@ function Plans() {
         },
       }));
     return (
-      <div className='bg-black py-32 px-64'>
-        <div className="flex space-x-32 items-start justify-between">
-            <div className="w-1/2 max-w-[380px] flex flex-col space-y-4">
-                <p className="text-3xl">Choose your plan</p>
+      <div className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
+        <div className="flex space-x-32 items-start justify-between max-md:flex-col max-md:space-x-0">
+            <div className="w-1/2 max-w-[380px] flex flex-col space-y-4 max-md:w-full max-md:m-auto">
+                <p className="text-3xl max-md:text-center">Choose your plan</p>
                 <div className="flex justify-between items-center">
                     <p className="text-sm text-[#8787f7]">Loved by 300 000+ AI creators</p>
                     <div className="flex items-center space-x-2 text-[#8787f7]">
@@ -143,7 +143,7 @@ function Plans() {
                     <FaAngleRight />
                 </div>
             </div>
-            <div className="w-1/2 flex flex-col space-y-4 items-center">
+            <div className="w-1/2 flex flex-col space-y-4 items-center max-md:w-full max-md:pt-16">
                 <div className="flex justify-center items-center space-x-2">
                     <p className="text-[#8787f7]">Monthly</p>
                     <IOSSwitch />
