@@ -63,7 +63,7 @@ function Header() {
                   <div className="shrink-0">
 
                   <Link
-                      href="/"
+                      href="/home"
                       className="text-gray-300  hover:text-white px-3 py-2  text-md font-medium">
                       <Image alt="ZOO" src={iconImage} width='90' height='64' />
                   </Link>
@@ -136,19 +136,19 @@ function Header() {
                       </div>
                     </div>
                     <Link
-                        href="/about"
+                        href="#"
                         className="text-gray-300  hover:text-white px-3 py-2  text-sm font-medium"
                     >
                         Use Cases
                     </Link>
                     <Link
-                        href="/campaign"
+                        href="#"
                         className="text-gray-300  hover:text-white px-3 py-2  text-sm font-medium"
                     >
                         How it works?
                     </Link>
                     <Link
-                        href="/getinvolved"
+                        href="#"
                         className="text-gray-300  hover:text-white px-3 py-2  text-sm font-medium"
                     >
                       <>
