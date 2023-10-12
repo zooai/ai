@@ -1,7 +1,6 @@
 "use client";
 import Link from 'next/link';
 import dynamic from "next/dynamic";
-
 import React,{useState} from "react";
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
   ssr: false,
@@ -27,8 +26,8 @@ function Top() {
                 alt=''
             /> */}
             <ModelViewer  className='float-right aspect-square'
-              usdz='/models/Elephant/ELEPHANT_ADULT.usdz'
-              glb="/models/Elephant/ELEPHANT_ADULT.glb"
+              usdz='https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.usdz'
+              glb="https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.glb"
             ></ModelViewer>
         </div>
       </div>
