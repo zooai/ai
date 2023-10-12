@@ -106,7 +106,7 @@ function Plans() {
         },
       }));
     return (
-      <div id='plans' className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
+      <div id='plans' className='bg-black py-32 px-48 max-md:py-24 max-md:px-8'>
         <div className="flex space-x-32 items-start justify-between max-md:flex-col max-md:space-x-0">
             <div className="w-1/2 max-w-[380px] flex flex-col space-y-4 max-md:w-full max-md:m-auto">
                 <p className="text-3xl max-md:text-center">Choose your plan</p>
@@ -150,13 +150,22 @@ function Plans() {
                     <p className="text-[#8787f7]">Yearly</p>
                     <div className="bg-[#13153b] text-[#8787f7] px-4 py-2 rounded-lg">3 Months Free</div>
                 </div>
-                <div className="flex flex-col w-full max-w-[400px] rounded-xl bg-[#252525] p-4 drop-shadow-[0_3px_8px_rgba(135,135,245,0.9)]">
-                  <div className="rounded-xl flex flex-col px-8 py-4 items-center">
-                    <p className="text-2xl text-[#8787F7]">{plan.title}</p>
-                    <p className="text-5xl mt-4 text-center">{plan.price}</p>
-                    <p className="text-xl mt-4 text-center">{plan.sub_title}</p>
+                {/* drop-shadow-[0_3px_8px_rgba(135,135,245,0.9)] */}
+                <div className="flex flex-col w-full max-w-[410px] rounded-xl bg-gradient-to-r from-[#1D1D57] to-[#05060C] pb-4">
+                  <div className="rounded-t-xl flex flex-col px-8 py-8 gap-4 bg-gradient-to-l from-[#7878db] to-[#252534]">
+                    <p className="text-2xl max-md:text-xl">{plan.title}</p>
+                    <div className="flex gap-2 items-center">
+                      <p className="text-5xl max-md:text-3xl">{plan.price}</p>
+                      {
+                        plan.index!=2 ? <p className="text-[#929293] text-xl">/month</p> : ''
+                      }
+                    </div>
+                    
+                    
+                    <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Get Started Now</span> <FaAngleRight /></div>
                   </div>
-                  <div className="flex flex-col pt-2 pb-8 space-y-4">
+                  <div className="flex flex-col py-8 px-4 space-y-4">
+                  <p className="text-xl text-center">{plan.sub_title}</p>
                   {
                       plan.list.map((data, index) => (
                         <div className="flex gap-3 items-center justify-between">
@@ -166,7 +175,7 @@ function Plans() {
                       ))
                   }
                   </div>
-                  <div className="my-4 w-full bg-gradient-to-l from-[#8787F7] to-[#252534] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Sign up. It’s free.</span> <FaAngleRight /></div>
+                  
                 </div>
                 <p className="text-center text-xs pt-4">Secure payments powered by Stripe. Cancel at any time.<br />*Plans with unlimited memory and tokens are subject to our <span className="text-[#8787f7]">Fair Use Policy.</span></p>
             </div>
