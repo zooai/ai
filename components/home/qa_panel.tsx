@@ -9,7 +9,7 @@ function QA({title,content}: {
     return (
         <div className="flex flex-col border-b pb-4 mb-4">
             <div onClick={()=>setFlag(!flag)} className='cursor-pointer flex items-center justify-between'>
-                <p className='text-2xl'>{title}</p>
+                <p className='text-2xl max-md:text-lg'>{title}</p>
                 <p className='text-md'>{flag ? <FaAngleUp /> :<FaAngleDown />}</p>
             </div>
             {flag &&

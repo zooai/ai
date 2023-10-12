@@ -106,7 +106,7 @@ function Plans() {
         },
       }));
     return (
-      <div className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
+      <div id='plans' className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
         <div className="flex space-x-32 items-start justify-between max-md:flex-col max-md:space-x-0">
             <div className="w-1/2 max-w-[380px] flex flex-col space-y-4 max-md:w-full max-md:m-auto">
                 <p className="text-3xl max-md:text-center">Choose your plan</p>
