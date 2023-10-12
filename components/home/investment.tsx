@@ -52,6 +52,9 @@ function Investment() {
         setHour(newValue);
       }
     };
+  const handleInputChange = (event: any) => {
+      setRate(event.target.value);
+    };
     return (
       <div className='bg-black py-32 px-64 max-md:py-24 max-md:px-8'>
         <div className="flex max-md:flex-col items-center justify-between">
@@ -66,7 +69,7 @@ function Investment() {
                 <p className='text-xs'>How much is 1 hour of your time worth to you?</p>
                 <div className='bg-[#10141B] rounded-lg p-2 gap-1 flex items-center justify-between'>
                     <span className='text-xs text-[#8d8d8e]'>$</span>
-                    <input type='number' value={rate} className='w-full outline-none bg-transparent' />
+                    <input type='number' value={rate} onChange={handleInputChange} className='w-full outline-none bg-transparent' />
                     <span className='text-xs text-[#8d8d8e]'>/hr</span>
                 </div>
             </div>
@@ -83,17 +86,17 @@ function Investment() {
                         alt=''
                     />
                 </div>
-                <div className='text-sm'>Or 80 hours of your life</div>
+                <div className='text-sm'>Or {hour * 4} hours of your life</div>
                 <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
                 <hr className='w-full my-5'/>
                 <div className='w-full text-sm'>How did we get this number?</div>
                 <div className='flex justify-between items-center w-full pt-2'>
                   <span className='text-[#9a9a9b] text-xs'>Hours lost per month</span>
-                  <span className='text-white text-xs'>80 hours</span>
+                  <span className='text-white text-xs'>{hour * 4} hours</span>
                 </div>
                 <div className='flex justify-between items-center w-full pt-2'>
-                  <span className='text-[#9a9a9b] text-xs'>Value of ZOO AI for saving 8 hours of your time </span>
-                  <span className='text-white text-xs'>$4000</span>
+                  <span className='text-[#9a9a9b] text-xs'>Value of ZOO AI for saving {hour * 4} hours of your time </span>
+                  <span className='text-white text-xs'>${hour * 4 * rate}</span>
                 </div>
                 <div className='flex justify-between items-center w-full pt-2'>
                   <span className='text-[#9a9a9b] text-xs'>Cost of ZOO AI PRO subscription per month</span>
@@ -102,7 +105,7 @@ function Investment() {
                 <hr className='w-full my-5'/>
                 <div className='flex justify-between items-center w-full'>
                   <span className='text-white text-sm'>Total TOI per month</span>
-                  <span className='text-white text-xs'>$3951</span>
+                  <span className='text-white text-xs'>${hour * 4 * rate - 49}</span>
                 </div>
             </div>
         </div>
