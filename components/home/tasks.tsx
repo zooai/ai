@@ -10,7 +10,7 @@ function Tasks() {
     return (
       <div className='bg-black p-32 max-md:py-24 max-md:px-0'>
         <p className='text-5xl max-md:text-3xl text-center'>Avoid the fatigue from <span className='text-[#8787F7]'>repetitive tasks</span><br />when you automate with Zoo Ai.</p>
-        <div className='flex px-8 pt-32 max-md:pt-16 max-md:flex-col max-md:flex-col-reverse items-start justify-between gap-32'>
+        <div className='flex px-8 pt-32 max-md:pt-16 max-md:flex-col-reverse items-start justify-between gap-32'>
             <div className='w-1/2 max-md:w-full ml-16 max-md:ml-0 max-md:z-10 justify-between flex flex-col items-center max-md:bg-gradient-to-b from-[#00000000] via-[#0000007f] to-[#000000]'>
                 <div className='w-[1px] h-[150px] bg-[#929292]'></div>
                 <div className='flex flex-col py-8 space-y-4'>
@@ -55,7 +55,7 @@ function Tasks() {
                 <div className='w-[1px] h-[300px] bg-[#929292]'></div>
             </div>
         </div>
-        <div className='flex px-8 pt-32 max-md:pt-16 max-md:flex-col max-md:flex-col-reverse items-start justify-between gap-32'>
+        <div className='flex px-8 pt-32 max-md:pt-16 max-md:flex-col-reverse items-start justify-between gap-32'>
             <div className='w-1/2 max-md:w-full ml-16 max-md:ml-0 max-md:z-10 justify-between flex flex-col items-center max-md:bg-gradient-to-b from-[#00000000] via-[#0000007f] to-[#000000]'>
                 <div className='w-[1px] h-[150px] bg-[#929292]'></div>
                 <div className='flex flex-col py-8 space-y-4'>

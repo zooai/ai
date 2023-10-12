@@ -11,7 +11,7 @@ function Solution() {
     return (
       <div className='bg-black py-32 max-md:py-24'>
         <p className='text-5xl text-center  max-md:text-3xl px-24 max-md:px-8'>Your <span className='text-[#8787F7]'>all-in-one</span> solution for next-level <span className='text-[#8787F7]'>Generative AI.</span></p>
-        <div className='flex max-md:flex-col max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-start justify-between'>
+        <div className='flex max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-start justify-between'>
             <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 mr-16 max-md:mr-0 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#0000007f] to-[#000000]'>
                 <div className='w-[1px] h-[150px] max-md:h-[80px] bg-[#929292]'></div>
                 <div className='flex flex-col justify-center items-center space-y-4 py-8'>

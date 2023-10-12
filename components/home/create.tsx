@@ -22,7 +22,7 @@ function Create() {
                 <p className='text-xs max-md:text-center'>Automate First Drafts and reclaim time when you unleash productivity by letting Zoo AI craft your initial drafts and refine content.</p>
             </div>
         </div>
-        <div className='flex max-md:flex-col max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-center justify-between'>
+        <div className='flex max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-center justify-between'>
             <div className='space-y-4 w-1/2 mr-16 max-md:w-full max-md:mr-0 max-md:pt-8'>
                 <p className='text-3xl max-md:text-2xl max-md:text-center'>Unlimited possibilities with <span className='text-[#8787F7]'>unlimited memory.</span></p>
                 <p className='text-xs max-md:text-center'>Always ready to listen and transcribe so you can easily have a buddy reference the conversations, meeting or clipboard history at any time.</p>

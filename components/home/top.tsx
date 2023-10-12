@@ -12,7 +12,7 @@ function Top() {
     
   return (<>
     <div className="bg-[length:100%_100%] bg-[url('../public/bg_top.png')] pt-[80px] block">
-      <div className='flex max-md:flex-col max-md:flex-col-reverse items-center justify-between py-8'>
+      <div className='flex max-md:flex-col-reverse items-center justify-between py-8'>
         <div className='flex flex-col w-1/2 max-md:w-full md:pl-24 lg:pl-36 xl:pl-52 max-md:px-8 md:pr-8  space-y-6'>
             <p className='text-[#8787F7] md:text-xl xl:text-2xl'>The most adorable AI interface yet.</p>
             <p className='text-white md:text-3xl xl:text-4xl'>Fast track your productivity and support the preservation of endangered animals.</p>
