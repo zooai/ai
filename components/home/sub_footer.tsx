@@ -15,7 +15,7 @@ function SubFooter() {
                 <div className='flex items-center text-xs'>
                     <span>No credit card required</span>
                     <Link
-                      href="/"
+                      href="#plans"
                       className="hover:text-gray-300  text-white px-3 py-2  text-md">
                         <u>See plans & pricing</u>
                     </Link>
