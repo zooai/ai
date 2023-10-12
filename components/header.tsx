@@ -161,7 +161,7 @@ function Header() {
               
                   <Link
                       href="/sign-in"
-                      className="text-white hover:bg-gray-700 bg-transparent border border-white hover:text-black hover:bg-white px-3 py-2 rounded-full text-xs md:block mr-3"
+                      className="text-white bg-transparent border border-white hover:text-black hover:bg-white px-3 py-2 rounded-full text-xs md:block mr-3"
                   >
                       Log In / Sign Up
                   </Link>
