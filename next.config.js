@@ -13,3 +13,18 @@ module.exports = {
     ]
   }
 }
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)\\.usdz',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/octet-stream',
+          },
+        ],
+      },
+    ];
+  },
+};
