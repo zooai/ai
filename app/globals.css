@@ -126,3 +126,27 @@ model-viewer {
 .bg-gradient {
   background: linear-gradient(165deg, rgb(61,61,194) 0%, rgba(135, 135, 255, 1) 100%);
 }
+
+.articles a {
+  color: #8787f7;
+  text-decoration: underline;
+}
+.articles ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style: disc;
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left:40px;
+}
+.articles li:not(:last-child) {
+  margin-bottom: 15px;
+}
+.articles p {
+  margin: 0.5rem 0;
+}
+.articles h3 {
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
