@@ -15,7 +15,7 @@ export default function FeaturesPage() {
         <div className="w-full bg-[#222] py-24 px-8">
             <div className="w-full m-auto max-w-[950px] flex flex-col text-[18px] articles">
                 <div className="flex items-center text-[1.8rem] pb-4">
-                    <span>You're looking for an alternative to&nbsp;</span>
+                    <span>You&apos;re looking for an alternative to&nbsp;</span>
                     <Link target="_blank" href='https://jasper.ai'>Jasper.ai</Link>
                 </div>
                 <p><Link target="_blank" rel="noopener noreferrer nofollow" href="https://jasper.ai">Jasper.ai</Link> is a great tool for AI writing and AI art generating. But users looking for a <Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link> alternative switch from <Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link> to Zoo AI for 3 main reasons:</p>
@@ -26,11 +26,11 @@ export default function FeaturesPage() {
                 </ul>
                 <h3 ><strong>1.</strong> Better user experience</h3>
                 <p>When we created Zoo AI, we wanted to ensure that our platform is focusing on the users needs, for an easy way to create the best possible AI content. This way our users can create SEO-optimized and plagiarism-free content for blogs, ads, emails, &amp; website 10X faster.</p>
-                <p><Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link>'s offers 50+ AI templates for marketers while Zoo AI lets you create your own personalized AI dashboard with all the tools you need for your productivity.</p>
+                <p><Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link>&apos;s offers 50+ AI templates for marketers while Zoo AI lets you create your own personalized AI dashboard with all the tools you need for your productivity.</p>
                 <h3 ><strong>2. Fairer pricing</strong></h3>
-                <p>We wanted to ensure that Zoo AI's pricing was both fair and uncomplicated for early-stage founders or marketing teams.</p>
-                <p>Our free tier gives you access to all of Zoo AI's features for writing, generating, and creating content, but is limited to 3,000 words and 30 images.</p>
-                <p>Our Starter tier is $20 a month and includes 20,000 words/mo and 50% word charge with <Link target="_blank" rel="noopener noreferrer nofollow" href="https://ai.zoo.ngo/">Zoo AI</Link>. With Pro, you'll have unlimited Marve Chat, AI Document Editor and 100,000 words/mo for $49 a month.</p>
+                <p>We wanted to ensure that Zoo AI&apos;s pricing was both fair and uncomplicated for early-stage founders or marketing teams.</p>
+                <p>Our free tier gives you access to all of Zoo AI&apos;s features for writing, generating, and creating content, but is limited to 3,000 words and 30 images.</p>
+                <p>Our Starter tier is $20 a month and includes 20,000 words/mo and 50% word charge with <Link target="_blank" rel="noopener noreferrer nofollow" href="https://ai.zoo.ngo/">Zoo AI</Link>. With Pro, you&apos;ll have unlimited Marve Chat, AI Document Editor and 100,000 words/mo for $49 a month.</p>
                 <p>For comparison, the cheapest monthly plan on <Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link> is $29. This is the second reason we consider ourselves a great alternative to <Link target="_blank" rel="noopener noreferrer nofollow" href="http://Jasper.ai">Jasper.ai</Link>.</p>
                 <h3 ><strong>3.</strong> More AI tools</h3>
                 <p>This is a big one. When we created Zoo AI we knew that AI could be more powerful than just simple tools and <Link target="_blank" rel="noopener noreferrer nofollow" href="https://chat.openai.com">ChatGPT</Link> (even though we have those too!).</p>
@@ -38,7 +38,7 @@ export default function FeaturesPage() {
                 <ul><li><p>Marve Chat (<Link target="_blank" rel="noopener noreferrer nofollow" href="https://chat.openai.com">ChatGPT</Link> by <Link target="_blank" rel="noopener noreferrer nofollow" href="openai.com">OpenAI</Link> alternative) with real-time Google data for more accurate answers.</p></li><li><p>AI Document Editor - like Google Docs, but with AI integrated.</p></li><li><p>Image Generator - Create stunning art in seconds.</p></li></ul>
                 <p>One of the best AI writer platform.</p>
                 <h3 ><strong>❤️ Find out for yourself</strong></h3>
-                <p>Zoo AI is a <Link target="_blank" rel="noopener noreferrer nofollow" href="https://jasper.ai/">Jasper.AI</Link> alternative that helps you write the best content with Generative AI. We'd love you to try Zoo AI's free plan to find out if it suits your needs. Click <Link target="_blank" rel="noopener noreferrer nofollow" href="https://ai.zoo.ngo">here</Link> to register for free.</p>
+                <p>Zoo AI is a <Link target="_blank" rel="noopener noreferrer nofollow" href="https://jasper.ai/">Jasper.AI</Link> alternative that helps you write the best content with Generative AI. We&apos;d love you to try Zoo AI&apos;s free plan to find out if it suits your needs. Click <Link target="_blank" rel="noopener noreferrer nofollow" href="https://ai.zoo.ngo">here</Link> to register for free.</p>
                 <h2 className="text-[2.3rem] my-8"><strong>Questions and answers:</strong> <Link target="_blank" rel="noopener noreferrer nofollow" href="https://jasper.ai/"><strong>Jasper.ai</strong></Link> <strong>alternative</strong></h2>
                 <h3><strong>What is</strong> <Link target="_blank" rel="noopener noreferrer nofollow" href="https://jasper.ai/"><strong>Jasper.ai</strong></Link><strong>?</strong></h3>
                 <p>Jasper is an AI tool to generate marketing writing,</p>
