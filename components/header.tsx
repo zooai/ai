@@ -176,7 +176,7 @@ function Header() {
               <Link
                 href="#"
                 onClick={()=>{setIsClicked(!isClicked)}}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block flex items-center justify-between px-3 py-2 rounded-md text-[32px] font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white flex items-center justify-between px-3 py-2 rounded-md text-[32px] font-medium"
               >
                 <span>Features</span>
                 {isClicked ? <FaAngleUp /> :<FaAngleDown />}
