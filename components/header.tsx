@@ -7,6 +7,7 @@ import feature3 from '../public/feature3.png'
 import feature4 from '../public/feature4.png'
 import feature5 from '../public/feature5.png'
 import feature6 from '../public/feature6.png'
+import { FaAngleUp, FaAngleDown, FaChevronRight } from "react-icons/fa";
 import React, { useState } from 'react';
 import Link from 'next/link';
 function Header() {
@@ -28,7 +29,7 @@ function Header() {
   return (
       <nav className={`${isOpen ? 'fixed' :'absolute'} w-full bg-transparent z-10 max-md:bg-black`}>
         <div className="px-4 sm:px-6 lg:px-8 xl:px-12 ">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 max-md:flex-row-reverse">
               <div className="md:hidden">
                   <button
                   type="button"
@@ -60,7 +61,7 @@ function Header() {
                   )}
                   </button>
               </div>
-              <div className="flex items-center max-md:ml-[36px]">
+              <div className="flex items-center">
                   <div className="shrink-0">
 
                   <Link
@@ -162,7 +163,7 @@ function Header() {
               
                   <Link
                       href="/sign-in"
-                      className="text-white bg-transparent border border-white hover:text-black hover:bg-white px-3 py-2 rounded-full text-xs md:block mr-3"
+                      className="text-white max-md:hidden bg-transparent border border-white hover:text-black hover:bg-white px-3 py-2 rounded-full text-xs md:block mr-3"
                   >
                       Log In / Sign Up
                   </Link>
@@ -175,11 +176,12 @@ function Header() {
               <Link
                 href="#"
                 onClick={()=>{setIsClicked(!isClicked)}}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white block flex items-center justify-between px-3 py-2 rounded-md text-[32px] font-medium"
               >
-                Features
+                <span>Features</span>
+                {isClicked ? <FaAngleUp /> :<FaAngleDown />}
               </Link>
-              <div className={`w-full ${isClicked ? 'block' :'hidden'} rounded-xl bg-[#151C25] p-6 flex flex-col gap-3`}>
+              <div className={`w-full ${isClicked ? 'block' :'hidden'} rounded-xl bg-black p-6 flex flex-col gap-3`}>
                 <Link href='/features/listening' className='p-1 rounded-xl hover:bg-[#3d3dc226]'>
                   <div className='flex items-center justify-start gap-3'>
                     <Image alt="feature" src={feature1} width='40' height='40' />
@@ -237,24 +239,28 @@ function Header() {
               </div>
               <Link
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-[32px] font-medium"
               >
                 Use Cases
               </Link>
               <Link
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-[32px] font-medium"
               >
                 How it works?
               </Link>
               <Link
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-[32px] font-medium"
               >
                 <>
                 Solutions
                 </>
               </Link>
+              <div className='flex items-center px-3 py-2 justify-stretch gap-4'>
+                <Link href='/sign-up' className='w-1/2'><div className='button-gradient w-full px-4 py-2 rounded-md flex items-center space-x-3'><span>Start for free</span><FaChevronRight /></div></Link>
+                <Link href='/sign-in' className='bg-[#10151f] w-1/2 text-center text-white py-2 rounded-md'>Log In</Link>
+              </div>
             </div>
           </div>
         )}
