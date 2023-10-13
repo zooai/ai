@@ -9,15 +9,14 @@ export default function FeaturesPage() {
   return (
     <div className='bg-black flex flex-col'>
     <Header />
-    <div className="pt-[130px] flex flex-col items-center">
-        <h1 className="text-[56px] text-center">Hypotenuse.ai Alternative</h1>
-        <p className="text-[20px] text-center text-[#929293] pt-4 pb-24">See why Zoo AI is the best alternative to Hypotenuse.ai</p>
+    <div className="pt-[130px] flex flex-col">
+        <h1 className="text-[56px] max-md:text-[44px] text-center w-full max-md:px-4">Hypotenuse.ai Alternative</h1>
+        <p className="text-[20px] text-center text-[#929293] w-full max-md:px-4 pt-4 pb-24">See why Zoo AI is the best alternative to Hypotenuse.ai</p>
         <div className="w-full bg-[#222] py-24 px-8">
             <div className="w-full m-auto max-w-[950px] flex flex-col text-[18px] articles">
-                <div className="flex items-center text-[1.8rem] pb-4">
-                    <span>You&apos;re looking for an alternative to&nbsp;</span>
-                    <Link target="_blank" href='https://www.hypotenuse.ai'>Hypotenuse.ai</Link>
-                </div>
+                <p className="text-[1.8rem]">
+                    <span>You&apos;re looking for an alternative to&nbsp;</span><Link target="_blank" href='https://www.hypotenuse.ai'>Hypotenuse.ai</Link>
+                </p>
                 <p><Link target="_blank" rel="noopener noreferrer nofollow" href="https://www.hypotenuse.ai">Hypotenuse.ai </Link>is a great tool for AI writing and AI art generating. But users looking for a <Link target="_blank" rel="noopener noreferrer nofollow" href="https://www.hypotenuse.ai">Hypotenuse.ai</Link> alternative switch from <Link target="_blank" rel="noopener noreferrer nofollow" href="https://www.hypotenuse.ai">Hypotenuse.ai</Link> to Zoo AI for 3 main reasons:</p>
                 <ul>
                     <li><p>Better user experience, with faster results</p></li>
