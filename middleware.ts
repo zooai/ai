@@ -20,11 +20,20 @@ export async function middleware(req: NextRequest) {
   // }
   // OPTIONAL: this forces users to be logged in to use the chatbot.
   // If you want to allow anonymous users, simply remove the check below.
+  // if (
+  //   !session &&
+  //   !req.url.includes('/sign-in') &&
+  //   !req.url.includes('/sign-up') &&
+  //   !req.url.includes('/home')
+  // ) {
+  //   const redirectUrl = req.nextUrl.clone()
+  //   redirectUrl.pathname = '/home'
+  //   // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
+  //   return NextResponse.redirect(redirectUrl)
+  // }
   if (
     !session &&
-    !req.url.includes('/sign-in') &&
-    !req.url.includes('/sign-up') &&
-    !req.url.includes('/home')
+    req.url.includes('/chat')
   ) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/home'

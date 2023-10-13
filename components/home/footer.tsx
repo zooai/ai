@@ -46,14 +46,14 @@ function Footer() {
             <div className='flex flex-col w-1/6 max-md:w-full border-b-2 max-md:border-none border-[#ffffff22] pb-8'>
                 <p className='text-lg font-bold border-b-2 border-[#ffffff22] pb-1'>Compare</p>
                 <div className='pt-6 flex flex-col gap-3'>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Jasper.ai alternative</Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Writesonic.com alternative </Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Rytr.me alternative </Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Copy.ai alternative </Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Hypotenuse.ai alternative</Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Simplified.com alternative</Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Hyperwriteai.com alternative</Link>
-                    <Link href='/' className='text-[#ffffffb3] hover:text-white text-sm'>Notion.so alternative</Link>
+                    <Link href='/jasper-ai-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Jasper.ai alternative</Link>
+                    <Link href='/writesonic-com-alternativ' className='text-[#ffffffb3] hover:text-white text-sm'>Writesonic.com alternative </Link>
+                    <Link href='/rytr-me-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Rytr.me alternative </Link>
+                    <Link href='/copy-ai-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Copy.ai alternative </Link>
+                    <Link href='/hypotenuse-ai-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Hypotenuse.ai alternative</Link>
+                    <Link href='/simplified-com-alternativ' className='text-[#ffffffb3] hover:text-white text-sm'>Simplified.com alternative</Link>
+                    <Link href='/hyperwriteai-com-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Hyperwriteai.com alternative</Link>
+                    <Link href='/notion-ai-alternative' className='text-[#ffffffb3] hover:text-white text-sm'>Notion.so alternative</Link>
                 </div>
             </div>
             <div className='flex flex-col w-1/3 max-md:w-full border-b-2 max-md:border-none border-[#ffffff22] pb-8'>
