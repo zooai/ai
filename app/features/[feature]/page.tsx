@@ -32,29 +32,29 @@ export default function FeaturesPage({ params}:FeaturePageProps) {
     <div className='bg-black flex flex-col'>
     <Header />
     <div className='flex flex-col items-center pt-36'>
-      <p className='text-5xl text-center leading-[4rem]' dangerouslySetInnerHTML={{ __html: feature?.title ? feature?.title : '' }}></p>
-      <p className='pt-8 text-lg max-w-[600px] text-center'>{feature?.description}</p>
-      <div className='flex justify-center pt-32 gap-12'>
+      <p className='text-5xl text-center leading-[4rem] max-md:text-3xl max-md:px-4' dangerouslySetInnerHTML={{ __html: feature?.title ? feature?.title : '' }}></p>
+      <p className='pt-8 text-lg max-w-[600px] text-center max-md:text-sm max-md:px-4'>{feature?.description}</p>
+      <div className='flex max-md:flex-col justify-center pt-32 max-md:pt-16 gap-12'>
         <div className='flex flex-col items-center max-w-[300px]'>
           <div className="text-center p-2 bg-[length:100%_100%] bg-[url('../public/bg_feature.png')]">
             <Image alt="feature" src={feature1} width='48' height='48' />
           </div>
-          <p className='text-sm pt-6'>Choose an Animal </p>
-          <p className='pt-3 text-xs text-center'>Always ready to hear your voice, it analyzes conversations to be referenced in the future, with the ability to turn on or off.</p>
+          <p className='text-sm pt-6'>{feature?.sub_title1} </p>
+          <p className='pt-3 text-xs text-center'>{feature?.sub_content1}</p>
         </div>
         <div className='flex flex-col items-center max-w-[300px]'>
           <div className="text-center p-2 bg-[length:100%_100%] bg-[url('../public/bg_feature.png')]">
             <Image alt="feature" src={feature4} width='48' height='48' />
           </div>
-          <p className='text-sm pt-6'>Choose an Animal </p>
-          <p className='pt-3 text-xs text-center'>Always ready to hear your voice, it analyzes conversations to be referenced in the future, with the ability to turn on or off.</p>
+          <p className='text-sm pt-6'>{feature?.sub_title2} </p>
+          <p className='pt-3 text-xs text-center'>{feature?.sub_content2}</p>
         </div>
         <div className='flex flex-col items-center max-w-[300px]'>
           <div className="text-center p-2 bg-[length:100%_100%] bg-[url('../public/bg_feature.png')]">
             <Image alt="feature" src={feature6} width='48' height='48' />
           </div>
-          <p className='text-sm pt-6'>Choose an Animal </p>
-          <p className='pt-3 text-xs text-center'>Always ready to hear your voice, it analyzes conversations to be referenced in the future, with the ability to turn on or off.</p>
+          <p className='text-sm pt-6'>{feature?.sub_title3} </p>
+          <p className='pt-3 text-xs text-center'>{feature?.sub_content3}</p>
         </div>
       </div>
     </div>
