@@ -1,13 +1,19 @@
 "use client";
 import React,{useEffect, useState} from "react";
 import Header  from '@/components/header'
-import Steps from '@/components/home/steps'
+import Steps from '@/components/feature_steps'
 import SubFooter from '@/components/home/sub_footer'
 import Footer from '@/components/home/footer'
 import features from "@/components/features.json";
 import feature1 from '../../../public/feature1.png'
 import feature4 from '../../../public/feature4.png'
 import feature6 from '../../../public/feature6.png'
+import f_img1 from '../../../public/feature_img1.png'
+import f_img2 from '../../../public/business-tools.gif'
+import f_img3 from '../../../public/create3.png'
+import f_img4 from '../../../public/step.png'
+import f_img5 from '../../../public/feature_img1.png'
+import f_img6 from '../../../public/feature_img2.png'
 import Image from 'next/image'
 export interface FeaturePageProps {
   params: {
@@ -17,6 +23,7 @@ export interface FeaturePageProps {
 export default function FeaturesPage({ params}:FeaturePageProps) {
   const [featureRoute, setFeatureRoute] = useState(params.feature);
   const [feature, setFeature] = useState(features.find((feature) => feature.route === params.feature));
+  const main_images = [f_img1,f_img2,f_img3,f_img4,f_img5,f_img6]
   React.useEffect(() => {
       setFeatureRoute(params.feature);
       setFeature(features.find((feature) => feature.route === params.feature));
@@ -51,7 +58,7 @@ export default function FeaturesPage({ params}:FeaturePageProps) {
         </div>
       </div>
     </div>
-    <Steps />
+    <Steps step1={feature?.step1} step2={feature?.step2} step3={feature?.step3} content1={feature?.content1} content2={feature?.content2} content3={feature?.content3} main_image={main_images[feature?.index ? feature.index : 0]}/>
     <SubFooter />
     <Footer />
     </div>
