@@ -1,9 +1,12 @@
 "use client";
 import Link from 'next/link';
+import iconImage from '../../public/ZOO.png'
+import Image from 'next/image'
 function Footer() {
     return (
       <div className='bg-black py-32 px-24 max-md:py-24 max-md:px-8'>
-        <p className='text-4xl max-md:text-3xl font-bold'>ZOO AI</p>
+        {/* <p className='text-4xl max-md:text-3xl font-bold'>ZOO AI</p> */}
+        <Image alt="ZOO" src={iconImage} width='90' height='64' />
         <div className='flex max-md:flex-col pt-8 gap-16'>
             <div className='flex flex-col w-1/4 max-md:w-full border-b-2 max-md:border-none border-[#ffffff22] pb-8'>
                 <p className='text-lg font-bold border-b-2 border-[#ffffff22] pb-1'>Info</p>
