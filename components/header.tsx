@@ -181,7 +181,7 @@ function Header() {
                 <span>Features</span>
                 {isClicked ? <FaAngleUp /> :<FaAngleDown />}
               </Link>
-              <div className={`w-full ${isClicked ? 'block' :'hidden'} rounded-xl bg-black p-6 flex flex-col gap-3`}>
+              <div className={`w-full ${isClicked ? 'block' :'hidden'} rounded-xl bg-black p-6 max-md:p-2 flex flex-col gap-3 max-md:gap-2`}>
                 <Link href='/features/listening' className='p-1 rounded-xl hover:bg-[#3d3dc226]'>
                   <div className='flex items-center justify-start gap-3'>
                     <Image alt="feature" src={feature1} width='40' height='40' />
