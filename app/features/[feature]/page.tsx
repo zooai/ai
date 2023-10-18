@@ -8,12 +8,12 @@ import features from "@/components/features.json";
 import feature1 from '../../../public/feature1.png'
 import feature4 from '../../../public/feature4.png'
 import feature6 from '../../../public/feature6.png'
-import f_img1 from '../../../public/feature_img1.png'
+import f_img1 from '../../../public/Active_Listening.gif'
 import f_img2 from '../../../public/business-tools.gif'
-import f_img3 from '../../../public/create3.png'
-import f_img4 from '../../../public/step.png'
-import f_img5 from '../../../public/feature_img1.png'
-import f_img6 from '../../../public/feature_img2.png'
+import f_img3 from '../../../public/unlimited_memory.gif'
+import f_img4 from '../../../public/jumpstart.gif'
+import f_img5 from '../../../public/creative_work.gif'
+import f_img6 from '../../../public/lifestyle.gif'
 import Image from 'next/image'
 export interface FeaturePageProps {
   params: {
