@@ -150,3 +150,6 @@ model-viewer {
   margin: 1.5rem 0;
   font-weight: 600;
 }
+.slot.ar-button {
+  display: none !important;
+}
