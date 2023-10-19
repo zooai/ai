@@ -32,7 +32,7 @@ export default function FeaturesPage({ params}:FeaturePageProps) {
     <div className='bg-black flex flex-col'>
     <Header />
     <div className='flex flex-col items-center pt-36'>
-      <p className='text-5xl text-center leading-[4rem] max-md:text-3xl max-md:px-4' dangerouslySetInnerHTML={{ __html: feature?.title ? feature?.title : '' }}></p>
+      <p className='text-5xl font-semibold text-center leading-[4rem] max-md:text-3xl max-md:px-4' dangerouslySetInnerHTML={{ __html: feature?.title ? feature?.title : '' }}></p>
       <p className='pt-8 text-lg max-w-[600px] text-center max-md:text-sm max-md:px-4'>{feature?.description}</p>
       <div className='flex max-md:flex-col justify-center pt-32 max-md:pt-16 gap-12'>
         <div className='flex flex-col items-center max-w-[300px]'>
