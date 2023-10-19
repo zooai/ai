@@ -14,7 +14,7 @@ function FeatureSteps({step1,content1,step2,content2,step3,content3,main_image}:
       <div className='bg-black py-32 max-md:py-24'>
         <div className='flex max-md:flex-col px-36 max-md:px-8 items-stretch justify-between gap-24'>
             <div className='w-1/2 max-md:w-full flex flex-col justify-between gap-8'>
-                <p className='text-5xl'>Three <span className='text-[#8787F7]'>easy</span> steps!</p>
+                <p className='text-5xl font-semibold '>Three <span className='text-[#8787F7]'>easy</span> steps!</p>
                 <div className='flex space-x-4 items-start'>
                     <div className="text-center bg-[length:100%_100%] bg-[url('../public/bg_mark.png')]"><p className='w-[40px] h-[40px] leading-[40px]'>1</p></div>
                     <div className='flex flex-col space-y-4'>

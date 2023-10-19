@@ -74,7 +74,7 @@ function QAList() {
     ]
     return (
       <div className='bg-black p-32 max-md:py-24 max-md:px-8'>
-        <p className='text-5xl max-md:text-3xl text-center'>Frequently Asked Questions</p>
+        <p className='text-5xl font-semibold max-md:text-3xl text-center'>Frequently Asked Questions</p>
         <div className='mt-12 flex flex-col'>
             {
                 contents.map((data, index) => (

@@ -109,7 +109,7 @@ function Plans() {
       <div id='plans' className='bg-black py-32 px-48 max-md:py-24 max-md:px-8'>
         <div className="flex space-x-32 items-start justify-between max-md:flex-col max-md:space-x-0">
             <div className="w-1/2 max-w-[380px] flex flex-col space-y-4 max-md:w-full max-md:m-auto">
-                <p className="text-3xl max-md:text-center">Choose your plan</p>
+                <p className="text-3xl font-semibold  max-md:text-center">Choose your plan</p>
                 <div className="flex justify-between items-center">
                     <p className="text-sm text-[#8787f7]">Loved by 300 000+ AI creators</p>
                     <div className="flex items-center space-x-2 text-[#8787f7]">
@@ -148,12 +148,12 @@ function Plans() {
                     <p className="text-[#8787f7]">Monthly</p>
                     <IOSSwitch />
                     <p className="text-[#8787f7]">Yearly</p>
-                    <div className="bg-[#13153b] text-[#8787f7] px-4 py-2 rounded-lg">3 Months Free</div>
+                    <div className="bg-[#0A1625] text-white px-4 py-1 text-xs rounded-full">3 Months Free</div>
                 </div>
                 {/* drop-shadow-[0_3px_8px_rgba(135,135,245,0.9)] */}
                 <div className="flex flex-col w-full max-w-[410px] rounded-xl bg-gradient-to-r from-[#1D1D57] to-[#05060C] pb-4">
                   <div className="rounded-t-xl flex flex-col px-8 py-8 gap-4 bg-gradient-to-l from-[#7878db] to-[#252534]">
-                    <p className="text-2xl max-md:text-xl">{plan.title}</p>
+                    <p className="text-2xl font-semibold max-md:text-xl">{plan.title}</p>
                     <div className="flex gap-2 items-center">
                       <p className="text-5xl max-md:text-3xl">{plan.price}</p>
                       {

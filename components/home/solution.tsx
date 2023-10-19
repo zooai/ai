@@ -18,13 +18,13 @@ function Solution() {
     ]
     return (
       <div className='bg-black py-32 max-md:py-24'>
-        <p className='text-5xl text-center  max-md:text-3xl px-24 max-md:px-8'>Your <span className='text-[#8787F7]'>all-in-one</span> solution for next-level <span className='text-[#8787F7]'>Generative AI.</span></p>
+        <p className='text-5xl font-semibold text-center  max-md:text-3xl px-24 max-md:px-8'>Your <span className='text-[#8787F7]'>all-in-one</span> solution for next-level <span className='text-[#8787F7]'>Generative AI.</span></p>
         <div className='flex max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-start justify-between'>
             <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 mr-16 max-md:mr-0 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000af] to-[#000000]'>
                 <div className='w-[1px] h-[150px] max-md:h-[80px] bg-[#929292]'></div>
                 <div className='flex flex-col justify-center items-center space-y-4 py-8'>
-                    <p className='text-4xl'>Train and Explain</p>
-                    <p className='text-sm text-[#929292] text-center px-16'>Instead of spending hours analyzing and comparing the thousands of available language models we optimize to choose them for you at the most competitive prices OR specify which models to reference. </p>
+                    <p className='text-4xl font-semibold '>Train and Explain</p>
+                    <p className='text-sm font-semibold text-[#929292] text-center px-16'>Instead of spending hours analyzing and comparing the thousands of available language models we optimize to choose them for you at the most competitive prices OR specify which models to reference. </p>
                 </div>
                 <div className='w-[1px] h-[600px] max-md:h-[150px] bg-[#929292]'></div>
             </div>
@@ -82,7 +82,7 @@ function Solution() {
                 <div className='flex flex-col gap-8 pt-8'>
                 {
                     contents.map((data, index) => (
-                        <div className='bg-gradient-to-l rounded-xl text-center text-5xl text-[#8787f7] from-[#1D1D57] to-[#05060C] border-[0.1px] border-[#252559] w-full py-8 max-md:py-4 max-md:text-3xl'>
+                        <div className='bg-gradient-to-l rounded-xl text-center text-5xl font-semibold text-[#8787f7] from-[#1D1D57] to-[#05060C] border-[0.1px] border-[#252559] w-full py-8 max-md:py-4 max-md:text-3xl'>
                             {data.title}
                         </div>
                     ))
@@ -99,8 +99,8 @@ function Solution() {
             <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000af] to-[#000000]'>
                 <div className='w-[1px] h-[250px] max-md:h-[120px] bg-[#929292]'></div>
                 <div className='flex flex-col justify-center items-center space-y-4 py-8 px-12 max-md:px-0'>
-                    <p className='text-4xl text-center px-16'>One subscription to manage all your tasks.</p>
-                    <p className='text-sm text-[#929292] text-center px-16'>We use the best AI models to make the most effective and adorable buddies. Plus we are always on the lookout for the latest and greatest integrations and are constantly updating and improving our technology.  </p>
+                    <p className='text-4xl font-semibold text-center px-16'>One subscription to manage all your tasks.</p>
+                    <p className='text-sm font-semibold text-[#929292] text-center px-16'>We use the best AI models to make the most effective and adorable buddies. Plus we are always on the lookout for the latest and greatest integrations and are constantly updating and improving our technology.  </p>
                 </div>
                 <div className='w-[1px] h-[1000px] max-md:h-[500px] bg-[#929292]'></div>
             </div>
