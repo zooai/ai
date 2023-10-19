@@ -66,10 +66,10 @@ function Investment() {
                 </div>
             </div>
             <div className="w-3/5 max-md:w-full flex flex-col items-center border-l pl-16 max-md:border-none max-md:px-16 max-md:pt-16 max-sm:px-8">
-                <div className='text-3xl max-md:text-center'><span className='text-[#8787f7]'>Return</span> on investment</div>
+                <div className='text-3xl max-md:text-center font-semibold '><span className='text-[#8787f7]'>Return</span> on investment</div>
                 <div className='text-sm'>Per month with ZOO AI</div>
                 <div className='text-5xl pt-5 flex items-center justify-center'>
-                  <span>${hour.values[0] * 4 * rate - 49}</span>
+                  <span className="font-semibold">${hour.values[0] * 4 * rate - 49}</span>
                   <Image
                         className='h-[50px]'
                         src={money_icon}

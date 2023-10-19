@@ -83,8 +83,8 @@ function Review() {
     ]
     return (
       <div className='bg-black p-32 max-md:py-24 max-md:px-8'>
-        <p className='text-5xl max-md:text-3xl text-center'>Don’t Take Our Word For It</p>
-        <p className='text-xl mt-4 text-center text-[#8787F7]'>Hear what our customers say and why they love us. </p>
+        <p className='text-5xl max-md:text-3xl font-semibold text-center'>Don’t Take Our Word For It</p>
+        <p className='text-xl mt-4 text-center font-semibold text-[#8787F7]'>Hear what our customers say and why they love us. </p>
         <div className='mt-12 grid grid-cols-3 max-md:grid-cols-1 gap-8'>
             {
                 contents.map((data, index) => (
