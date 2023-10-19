@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import '@/app/globals.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { fontMono, fontSans } from '@/lib/fonts'
+import { fontInter } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
@@ -45,9 +45,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          'font-sans antialiased',
-          fontSans.variable,
-          fontMono.variable
+          'font-inter',
+          fontInter.variable,
         )}
       >
         <Toaster />

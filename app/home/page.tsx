@@ -2,6 +2,7 @@ import Header  from '@/components/header'
 import Top  from '@/components/home/top'
 import Create from '@/components/home/create'
 import StartButton from '@/components/home/start-button'
+import Values from '@/components/home/values'
 import Analyze from '@/components/home/analyze'
 import Unleash from '@/components/home/unleash'
 import Solution from '@/components/home/solution'
@@ -18,6 +19,7 @@ export default async function SignInPage() {
     <div className='bg-black flex flex-col'>
     <Header />
     <Top />
+    <Values />
     <Create />
     <StartButton />
     <Analyze />
