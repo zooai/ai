@@ -1,11 +1,13 @@
 "use client";
-import React,{useState} from "react";
-import Slider from '@mui/material/Slider';
-import { styled } from '@mui/material/styles';
+import React,{useState} from "react"
+import Slider from '@mui/material/Slider'
+import { styled } from '@mui/material/styles'
 import money_icon from '../../public/money_icon.png'
 import { FaAngleRight } from 'react-icons/fa'
 import Image from 'next/image'
-import { Range } from 'react-range';
+import Link from "next/link"
+import { Range } from 'react-range'
+
 function Investment() {
   const [hour ,setHour] = useState({ values: [20] });
   const [rate ,setRate] = useState(50);
@@ -79,7 +81,9 @@ function Investment() {
                     />
                 </div>
                 <div className='text-sm'>Or {hour.values[0] * 4} hours of your life</div>
-                <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
+                <Link href="/sign-up">
+                  <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
+                </Link>
                 <hr className='w-full my-5'/>
                 <div className='w-full text-sm'>How did we get this number?</div>
                 <div className='flex justify-between items-center w-full pt-2'>

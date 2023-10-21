@@ -3,6 +3,8 @@ import {FaStar, FaAngleRight, FaCheck} from "react-icons/fa"
 import React,{useEffect, useState} from "react";
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
+import Link from "next/link";
+
 function Plans() {
   const plans = [
     {
@@ -14,7 +16,7 @@ function Plans() {
         {value: "10,000 tokens per month"},
         {value: "Comes with one AI buddy"},
         {value: "24/7 Email support"},
-        {value: "Access to all LLM models with new models added 24/7."},
+        {value: "Access to all LLM models with new models added 24/7"},
         {value: "Unlimited memory, pay as you go."},
         {value: "Access to native app + IOS"},
         {value: "Food ordering, business tools, recording + transcribing, lifestyle support, and so much more!"}
@@ -39,16 +41,16 @@ function Plans() {
     {
       title: "Custom Package",
       index: 2,
-      price: "Custom Pricing",
+      price: "Made to Order",
       sub_title: 'Fam+ w/ all the features and personalization.',
       list:[
         {value: "Automatic token top-up every month "},
         {value: "Exclusive AI Buddies"},
         {value: "24/7 Email support"},
-        {value: "Access to all LLM models with new models added 24/7."},
-        {value: "Unlimited memory, pay as you go."},
+        {value: "Access to all LLM models with new models added 24/7"},
+        {value: "Unlimited memory, pay as you go"},
         {value: "Access to native app + IOS"},
-        {value: "Food ordering, business tools, recording + transcribing, lifestyle support, and so much more!"}
+        {value: "Food ordering, business tools, recording + transcribing, lifestyle support, and so much more"}
       ]
     },
 ];
@@ -111,7 +113,7 @@ function Plans() {
             <div className="w-1/2 max-w-[380px] flex flex-col space-y-4 max-md:w-full max-md:m-auto">
                 <p className="text-3xl font-semibold  max-md:text-center">Choose your plan</p>
                 <div className="flex justify-between items-center">
-                    <p className="text-sm text-[#8787f7]">Loved by 300 000+ AI creators</p>
+                    <p className="text-sm text-[#8787f7]">Loved by AI pioneers globally</p>
                     <div className="flex items-center space-x-2 text-[#8787f7]">
                         <FaStar />
                         <FaStar />
@@ -161,8 +163,9 @@ function Plans() {
                       }
                     </div>
                     
-                    
-                    <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Get Started Now</span> <FaAngleRight /></div>
+                    <Link href="/sign-up">
+                      <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Choose Plan</span> <FaAngleRight /></div>
+                    </Link>
                   </div>
                   <div className="flex flex-col py-8 px-4 space-y-4">
                   <p className="text-xl text-center">{plan.sub_title}</p>
