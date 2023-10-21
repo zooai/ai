@@ -29,7 +29,7 @@ function Unleash() {
         <p className="text-sm text-[#929292] font-semibold pt-8 max-w-[600px] text-center">Create captivating SEO content for blog posts, articles, Facebook advertisements, Google Ads campaigns, Quora responses, and sales-related emails to boost click rates, lead generation, and boost sales revenue.</p>
         <div className="max-w-[1200px] w-full max-md:w-full bg-[length:100%_100%] bg-[url('../public/bg_unleash.png')] xl:p-24 lg:p-16 md:p-8 max-md:p-8 flex max-md:flex-col mt-16 rounded-xl space-x-12 max-md:space-x-0">
             <div className="flex flex-col w-[30%] max-md:w-full space-y-2">
-                <p className='text-3xl max-md:text-center max-md:text-2xl'>We believe Ai is for <span className="text-[#8787f7]">everyone.</span></p>
+                <p className='text-3xl max-md:text-center max-md:text-2xl'>We believe AI is for <span className="text-[#8787f7]">everyone.</span></p>
                 <p className="text-xs max-md:text-center">(Inluding your Grandparents)</p>
             </div>
             <div className="flex flex-col w-[70%] max-md:w-full max-md:pt-8">
