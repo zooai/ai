@@ -75,7 +75,7 @@ function Header() {
                   <div className="mx-10 flex items-baseline xl:space-x-16 md:space-x-2 lg:space-x-8 2xl:space-x-20">
                     <div className=''  onMouseEnter={handleHover}  onMouseLeave={handleMouseLeave}>
                       <Link
-                          href="/"
+                          href="#features_section"
                           className="text-gray-300  hover:text-white px-3 pt-2 pb-5  text-sm font-medium"
                       >
                           Features

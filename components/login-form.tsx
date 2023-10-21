@@ -26,15 +26,19 @@ export function LoginForm({
   const supabase = createClientComponentClient()
 
   const [formState, setFormState] = React.useState<{
+    first_name: string
+    last_name: string
     email: string
     password: string
   }>({
+    first_name: '',
+    last_name: '',
     email: '',
     password: ''
   })
 
   const signIn = async () => {
-    const { email, password } = formState
+    const { first_name, last_name, email, password } = formState
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password
@@ -43,7 +47,7 @@ export function LoginForm({
   }
 
   const signUp = async () => {
-    const { email, password } = formState
+    const { first_name, last_name, email, password } = formState
     const { error, data } = await supabase.auth.signUp({
       email,
       password,
