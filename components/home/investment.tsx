@@ -79,7 +79,11 @@ function Investment() {
                     />
                 </div>
                 <div className='text-sm'>Or {hour.values[0] * 4} hours of your life</div>
-                <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
+                <Link
+                      href="/sign-in"
+                  >
+                     <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
+                  </Link>
                 <hr className='w-full my-5'/>
                 <div className='w-full text-sm'>How did we get this number?</div>
                 <div className='flex justify-between items-center w-full pt-2'>
