@@ -33,7 +33,7 @@ function Investment() {
                         ...props.style,
                         height: '8px',
                         width: '100%',
-                        backgroundColor: '#2929EB',
+                        backgroundColor: '#8787f7',
                         borderRadius:4
                       }}
                     >

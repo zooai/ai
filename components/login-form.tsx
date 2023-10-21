@@ -75,6 +75,36 @@ export function LoginForm({
     <div {...props}>
       <form onSubmit={handleOnSubmit}>
         <fieldset className="flex flex-col gap-y-4">
+          {
+            action == 'sign-up' ? <div className='flex flex-col gap-y-4'><div className="flex flex-col gap-y-1">
+            <Label>First Name</Label>
+            <Input
+              name="first_name"
+              type="text"
+              value={formState.first_name}
+              onChange={e =>
+                setFormState(prev => ({
+                  ...prev,
+                  first_name: e.target.value
+                }))
+              }
+            />
+          </div>
+          <div className="flex flex-col gap-y-1">
+          <Label>Last Name</Label>
+          <Input
+            name="last_name"
+            type="text"
+            value={formState.last_name}
+            onChange={e =>
+              setFormState(prev => ({
+                ...prev,
+                last_name: e.target.value
+              }))
+            }
+          />
+        </div></div> : ''
+          }
           <div className="flex flex-col gap-y-1">
             <Label>Email</Label>
             <Input
