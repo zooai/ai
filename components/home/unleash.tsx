@@ -24,7 +24,7 @@ const contents = [
 ]
 function Unleash() {
     return (
-      <div className='bg-black py-32 max-md:py-24 xl:px-48 lg:px-36 md:px-24 max-md:px-4 flex flex-col items-center'>
+      <div className='bg-black py-32 max-md:py-24 xl:px-48 lg:px-36 md:px-24 max-md:px-4 flex flex-col items-center' id='features_section'>
         <p className='text-5xl font-semibold max-md:text-3xl text-center'>Unleash the power of <span className="text-[#8787f7]">GPT-4.</span></p>
         <p className="text-sm text-[#929292] font-semibold pt-8 max-w-[600px] text-center">Create captivating SEO content for blog posts, articles, Facebook advertisements, Google Ads campaigns, Quora responses, and sales-related emails to boost click rates, lead generation, and boost sales revenue.</p>
         <div className="max-w-[1200px] w-full max-md:w-full bg-[length:100%_100%] bg-[url('../public/bg_unleash.png')] xl:p-24 lg:p-16 md:p-8 max-md:p-8 flex max-md:flex-col mt-16 rounded-xl space-x-12 max-md:space-x-0">
