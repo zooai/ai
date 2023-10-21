@@ -81,7 +81,7 @@ function Investment() {
                     />
                 </div>
                 <div className='text-sm'>Or {hour.values[0] * 4} hours of your life</div>
-                <Link href="/sign-up">
+                <Link className='w-full' href="/sign-up">
                   <div className='w-full mt-5 bg-[#8787f7] text-white py-2 rounded-lg flex items-center justify-center gap-4'>Get Started Now <FaAngleRight /></div>
                 </Link>
                 <hr className='w-full my-5'/>
