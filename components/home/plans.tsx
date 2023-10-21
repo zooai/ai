@@ -163,7 +163,7 @@ function Plans() {
                       }
                     </div>
                     
-                    <Link href="/sign-up">
+                    <Link className="w-full" href="/sign-up">
                       <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Choose Plan</span> <FaAngleRight /></div>
                     </Link>
                   </div>
