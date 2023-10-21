@@ -3,6 +3,8 @@ import {FaStar, FaAngleRight, FaCheck} from "react-icons/fa"
 import React,{useEffect, useState} from "react";
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
+import Link from "next/link";
+
 function Plans() {
   const plans = [
     {
@@ -161,8 +163,9 @@ function Plans() {
                       }
                     </div>
                     
-                    
-                    <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Get Started Now</span> <FaAngleRight /></div>
+                    <Link href="/sign-up">
+                      <div className="w-full bg-[#8787F7] rounded-lg py-2 cursor-pointer flex space-x-2 items-center justify-center"><span>Get Started Now</span> <FaAngleRight /></div>
+                    </Link>
                   </div>
                   <div className="flex flex-col py-8 px-4 space-y-4">
                   <p className="text-xl text-center">{plan.sub_title}</p>
