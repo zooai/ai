@@ -9,6 +9,7 @@ import { Input } from './ui/input'
 import { Label } from './ui/label'
 import Link from 'next/link'
 import { toast } from 'react-hot-toast'
+import {FaGoogle, FaApple} from "react-icons/fa"
 import { useRouter } from 'next/navigation'
 
 interface LoginFormProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -54,8 +55,14 @@ export function LoginForm({
       options: { emailRedirectTo: `${location.origin}/api/auth/callback` }
     })
 
-    if (!error && !data.session)
+    if (!error && !data.session) {
       toast.success('Check your inbox to confirm your email address!')
+      console.log("create the user")
+      const {data, error} = await supabase
+      .from('users')
+      .insert([{ email:email, first_name: first_name, last_name: last_name }]).select()
+      console.log(error)
+    }
     return error
   }
 
@@ -77,6 +84,8 @@ export function LoginForm({
 
   return (
     <div {...props}>
+      <p className='text-3xl font-bold'>{action == 'sign-in' ? 'SIGN IN' : 'SIGN UP'}</p>
+      <p className='text-sm pt-3 pb-8 text-[#8a8a93]'>Enter your email below to {action=='sign-in' ? 'sign in' : 'sign up'}</p>
       <form onSubmit={handleOnSubmit}>
         <fieldset className="flex flex-col gap-y-4">
           {
@@ -139,8 +148,8 @@ export function LoginForm({
           </div>
         </fieldset>
 
-        <div className="mt-4 flex items-center">
-          <Button disabled={isLoading}>
+        <div className="mt-4 flex items-center max-md:flex-col max-md:gap-4">
+          <Button disabled={isLoading} className='hover:bg-[#8787F7] hover:text-white max-md:w-full'>
             {isLoading && <IconSpinner className="mr-2 animate-spin" />}
             {action === 'sign-in' ? 'Sign In' : 'Sign Up'}
           </Button>
@@ -148,14 +157,14 @@ export function LoginForm({
             {action === 'sign-in' ? (
               <>
                 Don&apos;t have an account?{' '}
-                <Link href="/sign-up" className="font-medium">
+                <Link href="/sign-up" className="font-medium hover:text-[#8787F7]">
                   Sign Up
                 </Link>
               </>
             ) : (
               <>
                 Already have an account?{' '}
-                <Link href="/sign-in" className="font-medium">
+                <Link href="/sign-in" className="font-medium hover:text-[#8787F7]">
                   Sign In
                 </Link>
               </>
@@ -163,6 +172,17 @@ export function LoginForm({
           </p>
         </div>
       </form>
+      <hr className='my-8'/>
+      <div className='flex items-center justify-between gap-8'>
+        <div className='border border-[#8a8a8a] rounded-lg gap-4 flex items-center justify-center w-full py-2 cursor-pointer hover:bg-[#8787F7] '>
+              <FaGoogle />
+              <span>Google</span>
+        </div>
+        <div className='border border-[#8a8a8a] rounded-lg gap-4 flex items-center justify-center w-full py-2 cursor-pointer hover:bg-[#8787F7] '>
+              <FaApple />
+              <span>Apple</span>
+        </div>
+      </div>
     </div>
   )
 }
