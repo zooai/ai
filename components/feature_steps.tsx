@@ -18,21 +18,21 @@ function FeatureSteps({step1,content1,step2,content2,step3,content3,main_image}:
                 <div className='flex space-x-4 items-start'>
                     <div className="text-center bg-[length:100%_100%] bg-[url('../public/bg_mark.png')]"><p className='w-[40px] h-[40px] leading-[40px]'>1</p></div>
                     <div className='flex flex-col space-y-4'>
-                        <p className='text-xl' dangerouslySetInnerHTML={{ __html: step1 ? step1 : '' }}></p>
+                        <p className='text-xl font-semibold' dangerouslySetInnerHTML={{ __html: step1 ? step1 : '' }}></p>
                         <p className='text-sm text-[#929292]'>{content1}</p>
                     </div>
                 </div>
                 <div className='flex space-x-4 items-start'>
                     <div className="text-center bg-[length:100%_100%] bg-[url('../public/bg_mark.png')]"><p className='w-[40px] h-[40px] leading-[40px]'>2</p></div>
                     <div className='flex flex-col space-y-4'>
-                        <p className='text-xl' dangerouslySetInnerHTML={{ __html: step2 ? step2 : '' }}></p>
+                        <p className='text-xl font-semibold' dangerouslySetInnerHTML={{ __html: step2 ? step2 : '' }}></p>
                         <p className='text-sm text-[#929292]'>{content2} </p>
                     </div>
                 </div>
                 <div className='flex space-x-4 items-start'>
                     <div className="text-center bg-[length:100%_100%] bg-[url('../public/bg_mark.png')]"><p className='w-[40px] h-[40px] leading-[40px]'>3</p></div>
                     <div className='flex flex-col space-y-4'>
-                        <p className='text-xl' dangerouslySetInnerHTML={{ __html: step3 ? step3 : '' }}></p>
+                        <p className='text-xl font-semibold' dangerouslySetInnerHTML={{ __html: step3 ? step3 : '' }}></p>
                         <p className='text-sm text-[#929292]'>{content3} </p>
                     </div>
                 </div>
