@@ -24,6 +24,7 @@ export default async function SignInPage() {
           <ModelViewer  className='w-full aspect-square'
               usdz='https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.usdz'
               glb="https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.glb"
+              disable_zoom={true}
             ></ModelViewer>
         </div>
         <div className="flex w-full max-md:mt-[80px] px-6 max-md:px-4 flex-col items-center justify-center py-10 max-md:py-4">
