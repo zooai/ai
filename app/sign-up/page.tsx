@@ -20,17 +20,10 @@ export default async function SignInPage() {
     <div className='flex flex-col'>
       <Header />
       <div className='flex min-h-screen max-md:flex-col'>
-        <div className='w-full block max-md:hidden max-h-screen bg-[#18181b]'>
+        <div className='w-full max-md:w-3/5 max-md:mx-auto max-md:mt-[80px] max-h-screen bg-[#18181b] max-md:bg-transparent'>
           <ModelViewer  className='w-full aspect-square'
               usdz='https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.usdz'
               glb="https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.glb"
-              disable_zoom={true}
-            ></ModelViewer>
-        </div>
-        <div className='w-3/5 mx-auto hidden max-md:block max-md:mt-[80px] max-h-screen '>
-          <ModelViewer  className='aspect-square'
-              usdz='https://zoo.ngo/models/Elephant/ELEPHANT_BABY.usdz'
-              glb="https://zoo.ngo/models/Elephant/ELEPHANT_BABY.glb"
               disable_zoom={true}
             ></ModelViewer>
         </div>
