@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import create1 from '../../public/create1.png'
 import create2 from '../../public/create2.png'
-import create3 from '../../public/create3.png'
+import create3 from '../../public/unlimited_memory.gif'
 function Create() {
     return (
       <div className='bg-black pb-32 pt-8 max-md:pb-24'>
@@ -40,7 +40,7 @@ function Create() {
         <div className='flex max-md:flex-col lg:px-36 md:px-16 max-md:px-8 pt-32 max-md:pt-16 items-center justify-between'>
             <div className='w-1/2 mr-16 max-md:mr-0 max-md:w-5/6'>
                 <Image
-                    className='w-full'
+                    className='w-full rounded-md'
                     src={create3}
                     width='1000'
                     height='1000'
