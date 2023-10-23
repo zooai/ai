@@ -27,7 +27,14 @@ export default async function SignInPage() {
               disable_zoom={true}
             ></ModelViewer>
         </div>
-        <div className="flex w-full max-md:h-[calc(100vh - 80px)] max-md:mt-[80px] px-6 max-md:px-4 flex-col items-center justify-center py-10 max-md:py-4">
+        <div className='w-3/5 mx-auto hidden max-md:block max-md:mt-[80px] max-h-screen '>
+          <ModelViewer  className='aspect-square'
+              usdz='https://zoo.ngo/models/Elephant/ELEPHANT_BABY.usdz'
+              glb="https://zoo.ngo/models/Elephant/ELEPHANT_BABY.glb"
+              disable_zoom={true}
+            ></ModelViewer>
+        </div>
+        <div className="flex w-full max-md:h-[calc(100vh - 80px)] px-6 max-md:px-4 flex-col items-center justify-center py-10 max-md:py-4">
           <div className="w-full max-w-sm">
             <LoginForm action="sign-up" />
             {/* <Separator className="my-4" /> */}
