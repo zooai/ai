@@ -20,7 +20,7 @@ function Solution() {
       <div className='bg-black py-32 max-md:py-24'>
         <p className='text-5xl font-semibold text-center  max-md:text-3xl px-24 max-md:px-8'>Your <span className='text-[#8787F7]'>all-in-one</span> solution for next-level <span className='text-[#8787F7]'>Generative AI.</span></p>
         <div className='flex max-md:flex-col-reverse px-36 max-md:px-8 pt-32 max-md:pt-16 items-start justify-between'>
-            <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 mr-16 max-md:mr-0 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000af] to-[#000000]'>
+            <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 mr-16 max-md:mr-0 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000df] via-[15%] to-[#000000]'>
                 <div className='w-[1px] h-[150px] max-md:h-[80px] bg-[#929292]'></div>
                 <div className='flex flex-col justify-center items-center space-y-4 py-8'>
                     <p className='text-4xl font-semibold '>Train and Explain</p>
@@ -96,7 +96,7 @@ function Solution() {
                     alt=''
                 /> */}
             </div>
-            <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000af] to-[#000000]'>
+            <div className='space-y-4 w-1/2 max-md:w-full max-md:z-10 max-md:pt-8 flex flex-col justify-between items-center max-md:bg-gradient-to-b from-[#00000000] via-[#000000df] via-[15%] to-[#000000]'>
                 <div className='w-[1px] h-[250px] max-md:h-[120px] bg-[#929292]'></div>
                 <div className='flex flex-col justify-center items-center space-y-4 py-8 px-12 max-md:px-0'>
                     <p className='text-4xl font-semibold text-center px-16'>One subscription to manage all your tasks.</p>
