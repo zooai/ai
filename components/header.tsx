@@ -27,7 +27,7 @@ function Header() {
   };
 
   return (
-      <nav className={`${isOpen ? 'fixed' :'absolute'} w-full bg-transparent z-10 max-md:bg-black`}>
+      <nav className={`${isOpen ? 'fixed' :'absolute'} max-md:fixed w-full bg-transparent z-10 max-md:bg-black`}>
         <div className="px-4 sm:px-6 lg:px-8 xl:px-12 ">
           <div className="flex items-center justify-between h-20 max-md:flex-row-reverse">
               <div className="md:hidden">
