@@ -7,6 +7,7 @@ const ModelViewer = ({
   glb = "/models/Tiger/TIGER_BABY.glb",
   usdz = "/models/Tiger/TIGER_BABY.usdz",
   zoom = "auto",
+  disable_zoom = false,
   camera_orbit = "",
   camera_target = "",
   control = true,
@@ -40,6 +41,7 @@ const ModelViewer = ({
         camera-target='${camera_target}'
         alt=""
         shadow-intensity="1"
+        ${disable_zoom ? 'disable-zoom':''}
         ${control ? 'camera-controls' : ''}
         ${auto_play ? 'auto-rotate autoplay' : ''}
         ${ar ? 'ar ar-placement="floor" ar-modes="scene-viewer webxr"' : ''}
