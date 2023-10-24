@@ -65,7 +65,20 @@ export function LoginForm({
     }
     return error
   }
-
+  const googleSignIn = async () => {
+    const { error, data } = await supabase.auth.signInWithOAuth({
+     provider: "google",
+     options: {
+      queryParams: {
+        access_type: 'offline',
+        prompt: 'consent',
+      },
+    },
+    })
+    console.log(error)
+    console.log(data)
+    return error
+  }
   const handleOnSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
     setIsLoading(true)
@@ -174,7 +187,7 @@ export function LoginForm({
       </form>
       <hr className='my-8'/>
       <div className='flex items-center justify-between gap-8'>
-        <div className='border border-[#8a8a8a] rounded-lg gap-4 flex items-center justify-center w-full py-2 cursor-pointer hover:bg-[#8787F7] '>
+        <div onClick={googleSignIn} className='border border-[#8a8a8a] rounded-lg gap-4 flex items-center justify-center w-full py-2 cursor-pointer hover:bg-[#8787F7] '>
               <FaGoogle />
               <span>Google</span>
         </div>
