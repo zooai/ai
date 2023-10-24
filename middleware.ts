@@ -1,6 +1,5 @@
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
-
 import type { NextRequest } from 'next/server'
 
 export async function middleware(req: NextRequest) {
@@ -31,7 +30,7 @@ export async function middleware(req: NextRequest) {
   //   // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
   //   return NextResponse.redirect(redirectUrl)
   // }
-  console.log(req.url);
+  // console.log();
   if (
     !session &&
     ( req.url.includes('/chat') || req.url.slice(-1)=='/')
