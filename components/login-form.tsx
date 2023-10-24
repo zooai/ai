@@ -76,7 +76,7 @@ export function LoginForm({
     },
     })
     console.log(error)
-    console.log(data)
+    
     return error
   }
   const handleOnSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
