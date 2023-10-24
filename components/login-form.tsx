@@ -72,7 +72,9 @@ export function LoginForm({
       queryParams: {
         access_type: 'offline',
         prompt: 'consent',
+        
       },
+      redirectTo: `${location.origin}/api/auth/callback`
     },
     })
     console.log(error)
