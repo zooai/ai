@@ -69,11 +69,6 @@ export function LoginForm({
     const { error, data } = await supabase.auth.signInWithOAuth({
      provider: "google",
      options: {
-      queryParams: {
-        access_type: 'offline',
-        prompt: 'consent',
-        
-      },
       redirectTo: `${location.origin}/api/auth/callback`
     },
     })
