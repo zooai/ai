@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { useEffect } from 'react';
-import { initGA, logPageView } from './analytics';
+
 import '@/app/globals.css'
 
 /**
@@ -9,10 +9,6 @@ import '@/app/globals.css'
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    initGA();
-    logPageView();
-  }, []);
   return <Component {...pageProps} />;
 }
 
