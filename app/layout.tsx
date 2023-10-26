@@ -6,6 +6,7 @@ import '@/app/globals.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { fontInter } from '@/lib/fonts'
+import GoogleAnalytics  from './analytics';
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontInter.variable,
         )}
       >
+        <GoogleAnalytics ga_id='G-QHHLV2FMT9' />
         <Toaster />
         <Providers attribute="class" defaultTheme="dark" enableSystem>
           <div className="w-full flex min-h-screen flex-col">

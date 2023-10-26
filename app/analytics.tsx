@@ -1,10 +1,24 @@
-import ReactGA from 'react-ga';
+import Script from "next/script";
 
-export const initGA = () => {
-  ReactGA.initialize('G-QHHLV2FMT9');
-};
+const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
+  <>
+    <Script
+      async
+      src={`https://www.googletagmanager.com/gtag/js? 
+      id=${ga_id}`}
+    ></Script>
+    <Script
+      id="google-analytics"
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
-};
+          gtag('config', '${ga_id}');
+        `,
+      }}
+    ></Script>
+  </>
+);
+export default GoogleAnalytics;
