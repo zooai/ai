@@ -2,16 +2,17 @@ import { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { initGA, logPageView } from './analytics';
 import '@/app/globals.css'
-useEffect(() => {
-  initGA();
-  logPageView();
-}, []);
+
 /**
  * !STARTERCONF info
  * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    initGA();
+    logPageView();
+  }, []);
   return <Component {...pageProps} />;
 }
 
