@@ -2,19 +2,19 @@
 function Values() {
     const contents = [
         {
-            title: "+45",
+            title: "Powerful",
             content: "Integrated with the leading LLMs"
         },
         {
-            title: "845k",
+            title: "Private",
             content: "Extra secure transactions"
         },
         {
-            title: "62M",
+            title: "Safe",
             content: "Regulated around the world"
         },
         {
-            title: "986",
+            title: "Useful",
             content: "All you need to receive money"
         },
     ]
