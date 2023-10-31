@@ -1,9 +1,19 @@
 import {FaArrowLeft, FaShareAlt, FaFileExport, FaTrashAlt, FaSignOutAlt} from "react-icons/fa";
 import Sideslider from '@/components/slider'
 import Image from 'next/image'
+import axios from "axios";
+import { useStripe } from '@stripe/react-stripe-js'
 function Subscription(props:any) {
     const { user, flag, event } = props;
-      
+    const stripe = useStripe();
+    const subscriptionTeams = async () => {
+        const { data } = await axios.get(`/api/subscription?code=${process.env.NEXT_PUBLIC_TEAMS_PRODUCT}`);
+        await stripe!.redirectToCheckout({ sessionId: data });
+    };
+    const subscriptionCreator = async () => {
+        const { data } = await axios.get(`/api/subscription?code=${process.env.NEXT_PUBLIC_CREATOR_PRODUCT}`);
+        await stripe!.redirectToCheckout({ sessionId: data });
+    };
     return (
         <div className={`absolute transition-all duration-300 ${
             flag == 4 ? 'translate-x-0' : '-translate-x-full'
@@ -16,12 +26,12 @@ function Subscription(props:any) {
                     <h2 className="border-b-2 py-3 px-5 border-white text-xl">Subscription</h2>
                     <p className="pt-6 pl-5 text-sm">Choose plan</p>
                     <div className="flex flex-col px-5 pt-6 space-y-3">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-4" >
                             <p className="text-xl text-bold">Teams</p>
                             <p className="text-md">$99/mo</p>
                         </div>
                         <p className="text-xs">Advanced AI features to create content for multiple brands & collaborate on campaigns.</p>
-                        <div className="border text-center w-full py-2 cursor-pointer">
+                        <div className="border text-center w-full py-2 cursor-pointer hover:bg-white hover:text-black" onClick={subscriptionTeams}>
                             Start free 7-day trial
                         </div>
                     </div>
@@ -31,7 +41,7 @@ function Subscription(props:any) {
                             <p className="text-md">$39/mo</p>
                         </div>
                         <p className="text-xs">Powerful AI features to create & improve your content everywhere you work online.</p>
-                        <div className="border text-center w-full py-2 cursor-pointer">
+                        <div className="border text-center w-full py-2 cursor-pointer hover:bg-white hover:text-black" onClick={subscriptionCreator}>
                             Start free 7-day trial
                         </div>
                     </div>
