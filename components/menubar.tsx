@@ -7,6 +7,9 @@ import History from '@/components/history'
 import Setting from '@/components/setting'
 import Subscription from '@/components/subscription'
 import React, { useState } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || '');
 function Menubar(props:any) {
     const { user } = props;
     const [flag, setFlag] = useState(0);
@@ -46,10 +49,13 @@ function Menubar(props:any) {
             <Link href="https://zoolabsofficial.medium.com" legacyBehavior><BsMedium /></Link>
             <Link href="https://youtu.be/6yYuYtMWgOU" legacyBehavior><FaYoutube /></Link>
       </div>
+      <Elements stripe={stripePromise}>
       <Newchat flag={flag} event={setStatus}/>
       <History userId={user?.id} flag={flag} event={setStatus}/>
       <Setting user={user} flag={flag} event={setStatus}/>
+      
       <Subscription  user={user} flag={flag} event={setStatus} />
+      </Elements>
     </div>
   )
 }
