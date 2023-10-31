@@ -1,6 +1,5 @@
-import {FaArrowLeft, FaShareAlt, FaFileExport, FaTrashAlt, FaSignOutAlt} from "react-icons/fa";
+import {FaArrowLeft} from "react-icons/fa";
 import Sideslider from '@/components/slider'
-import Image from 'next/image'
 import axios from "axios";
 import { useStripe } from '@stripe/react-stripe-js'
 function Subscription(props:any) {
