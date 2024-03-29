@@ -1,10 +1,12 @@
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
-import { auth } from '@/auth'
 import { getChat } from '@/app/actions'
 import { Chat } from '@/components/chat'
 import { cookies } from 'next/headers'
+import { useEffect, useState } from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
@@ -18,10 +20,18 @@ export interface ChatPageProps {
 export async function generateMetadata({
   params
 }: ChatPageProps): Promise<Metadata> {
-  const cookieStore = cookies()
-  const session = await auth({ cookieStore })
+  const [authuser, setAuthuser] = useState(null)
+  useEffect(() => {
+    const list = onAuthStateChanged(auth, (user: any) => {
+      if (user) {
+        setAuthuser(user)
+      } else {
+        setAuthuser(null)
+      }
+    })
+  }, [])
 
-  if (!session?.user) {
+  if (!authuser) {
     return {}
   }
 
@@ -32,10 +42,19 @@ export async function generateMetadata({
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {
-  const cookieStore = cookies()
-  const session = await auth({ cookieStore })
+  const [authuser, setAuthuser] = useState(null)
+  useEffect(() => {
+    const list = onAuthStateChanged(auth, (user: any) => {
+      if (user) {
+        setAuthuser(user)
+      } else {
+        setAuthuser(null)
+      }
+    })
+  }, [])
 
-  if (!session?.user) {
+
+  if (!authuser) {
     redirect(`/sign-in?next=/chat/${params.id}`)
   }
 
@@ -45,7 +64,7 @@ export default async function ChatPage({ params }: ChatPageProps) {
     notFound()
   }
 
-  if (chat?.userId !== session?.user?.id) {
+  if (chat?.userId !== authuser) {
     notFound()
   }
 
