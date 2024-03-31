@@ -1,18 +1,22 @@
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-
+import { auth } from "./firebase/firebase"
+import { onAuthStateChanged } from 'firebase/auth'
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
+
+
+
+
+
 
   // Create a Supabase client configured to use cookies
   const supabase = createMiddlewareClient({ req, res })
 
   // Refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
-  const {
-    data: { session }, error
-  } = await supabase.auth.getSession()
+  const { data: { session }, error } = await supabase.auth.getSession()
   // if (error) {
   //   // const { error, data } = await supabase.auth.refreshSession();
   //   return ;
@@ -33,7 +37,7 @@ export async function middleware(req: NextRequest) {
   // console.log();
   if (
     !session &&
-    ( req.url.includes('/chat') || req.url.slice(-1)=='/')
+    (req.url.includes('/chat') || req.url.slice(-1) == '/')
   ) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/home'
