@@ -11,7 +11,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
   ssr: false,
 });
-export default async function SignInPage() {
+export default function SignInPage() {
 
   const [authuser, setAuthuser] = useState(null)
   const router = useRouter()

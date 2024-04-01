@@ -14,7 +14,7 @@ import Investment from '@/components/home/investment'
 import QAList from '@/components/home/qa'
 import SubFooter from '@/components/home/sub_footer'
 import Footer from '@/components/home/footer'
-export default async function SignInPage() {
+export default function SignInPage() {
   return (
     <div className='bg-black flex flex-col'>
     <Header />
