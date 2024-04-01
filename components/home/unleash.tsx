@@ -35,7 +35,7 @@ function Unleash() {
             <div className="flex flex-col w-[70%] max-md:w-full max-md:pt-8">
                 {
                     contents.map((data, index) => (
-                        <Accordion title={data.title} content={data.content}/>
+                        <Accordion key={index} title={data.title} content={data.content}/>
                       ))
                 }
             </div>

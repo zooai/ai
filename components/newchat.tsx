@@ -134,7 +134,7 @@ function Newchat(props:any) {
                     
                     <div className={`grid-cols-3 gap-4 pt-4 px-4 ${!hide?"grid":'hidden'}`}>
                         {prompts.map((data, index) => (
-                            <div className='text-[0.6rem] align-middle flex items-center justify-center border border-white text-center p-1'>
+                            <div key={index} className='text-[0.6rem] align-middle flex items-center justify-center border border-white text-center p-1'>
                                 {data.title}
                             </div>
                         ))}
