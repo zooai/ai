@@ -162,7 +162,7 @@ function Setting(props:any) {
                     <p className="pt-4 pl-5 text-xs">Choose Animal Voice</p>
                     <div className="pt-3 px-5 flex items-center justify-between">
                         {voice_list.map((data, index) => (
-                            <div className='text-[0.6rem] align-middle flex items-center justify-center border border-white text-center p-2'>
+                            <div key={index} className='text-[0.6rem] align-middle flex items-center justify-center border border-white text-center p-2'>
                                 {data.title}
                             </div>
                         ))}
