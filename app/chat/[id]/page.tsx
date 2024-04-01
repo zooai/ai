@@ -3,7 +3,6 @@ import { notFound, redirect } from 'next/navigation'
 
 import { getChat } from '@/app/actions'
 import { Chat } from '@/components/chat'
-import { cookies } from 'next/headers'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase/firebase'
