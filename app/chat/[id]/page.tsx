@@ -1,3 +1,4 @@
+"use client"
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
@@ -16,31 +17,31 @@ export interface ChatPageProps {
   }
 }
 
-export async function generateMetadata({
-  params
-}: ChatPageProps): Promise<Metadata> {
-  const [authuser, setAuthuser] = useState(null)
-  useEffect(() => {
-    const list = onAuthStateChanged(auth, (user: any) => {
-      if (user) {
-        setAuthuser(user)
-      } else {
-        setAuthuser(null)
-      }
-    })
-  }, [])
+// export async function generateMetadata({
+//   params
+// }: ChatPageProps): Promise<Metadata> {
+//   // const [authuser, setAuthuser] = useState(null)
+//   // useEffect(() => {
+//   //   const list = onAuthStateChanged(auth, (user: any) => {
+//   //     if (user) {
+//   //       setAuthuser(user)
+//   //     } else {
+//   //       setAuthuser(null)
+//   //     }
+//   //   })
+//   // }, [])
 
-  if (!authuser) {
-    return {}
-  }
+//   // if (!authuser) {
+//   //   return {}
+//   // }
 
-  const chat = await getChat(params.id)
-  return {
-    title: chat?.title.toString().slice(0, 50) ?? 'Chat'
-  }
-}
+//   const chat = await getChat(params.id)
+//   return {
+//     title: chat?.title.toString().slice(0, 50) ?? 'Chat'
+//   }
+// }
 
-export default async function ChatPage({ params }: ChatPageProps) {
+export default function ChatPage({ params }: ChatPageProps) {
   const [authuser, setAuthuser] = useState(null)
   useEffect(() => {
     const list = onAuthStateChanged(auth, (user: any) => {
@@ -57,7 +58,10 @@ export default async function ChatPage({ params }: ChatPageProps) {
     redirect(`/sign-in?next=/chat/${params.id}`)
   }
 
-  const chat = await getChat(params.id)
+  let chat: any = null;
+  getChat(params.id).then(res => {
+    chat = res;
+  })
 
   if (!chat) {
     notFound()
