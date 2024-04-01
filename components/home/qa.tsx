@@ -78,7 +78,7 @@ function QAList() {
         <div className='mt-12 flex flex-col'>
             {
                 contents.map((data, index) => (
-                    <QA title={data.title} content={data.content}/>
+                    <QA title={data.title} content={data.content} key={index}/>
                     ))
             }
         </div>

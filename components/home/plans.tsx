@@ -171,7 +171,7 @@ function Plans() {
                   <p className="text-xl text-center">{plan.sub_title}</p>
                   {
                       plan.list.map((data, index) => (
-                        <div className="flex gap-3 items-center justify-between">
+                        <div key={index} className="flex gap-3 items-center justify-between">
                           <FaCheck className="w-[16px] h-[16px]"/>
                           <span className="w-full">{data.value}</span>
                         </div>

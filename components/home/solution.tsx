@@ -82,7 +82,7 @@ function Solution() {
                 <div className='flex flex-col gap-8 pt-8'>
                 {
                     contents.map((data, index) => (
-                        <div className='bg-gradient-to-l rounded-xl text-center text-5xl font-semibold text-[#8787f7] from-[#1D1D57] to-[#05060C] border-[0.1px] border-[#252559] w-full py-8 max-md:py-4 max-md:text-3xl'>
+                        <div key={index} className='bg-gradient-to-l rounded-xl text-center text-5xl font-semibold text-[#8787f7] from-[#1D1D57] to-[#05060C] border-[0.1px] border-[#252559] w-full py-8 max-md:py-4 max-md:text-3xl'>
                             {data.title}
                         </div>
                     ))

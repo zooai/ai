@@ -88,7 +88,7 @@ function Review() {
         <div className='mt-12 grid grid-cols-3 max-md:grid-cols-1 gap-8'>
             {
                 contents.map((data, index) => (
-                    <ReviewPanel title={data.title} content={data.content} avatar={data.avatar} company={data.company} name={data.name}/>
+                    <ReviewPanel title={data.title} content={data.content} avatar={data.avatar} company={data.company} name={data.name} key={index}/>
                     ))
             }
         </div>
