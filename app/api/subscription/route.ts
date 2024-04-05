@@ -1,8 +1,8 @@
-import Stripe from "stripe";
-import { NextApiRequest, NextApiResponse } from 'next';
+import Stripe from 'stripe'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { NextResponse } from 'next/server'
 // export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  
+
 //   const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY || '', {
 //     apiVersion: '2022-11-15',
 //   })
@@ -38,27 +38,26 @@ export async function GET(request: Request) {
   const requestUrl = new URL(request.url)
   const code = requestUrl.searchParams.get('code')
   const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY || '', {
-    apiVersion: '2022-11-15',
+    apiVersion: '2022-11-15'
   })
   // const { route } = requestUrl.query;
-  const product = await stripe.products.retrieve(String(code));
+  const product = await stripe.products.retrieve(String(code))
 
-    const params: Stripe.Checkout.SessionCreateParams = {
-        payment_method_types: ['card'],
-        line_items: [
-            {
-              price: String(product.default_price),
-              quantity: 1,
-            }
-          ],
-        mode: 'subscription',
-        success_url: `${process.env.NEXT_PUBLIC_HOST}?result=success`,
-        cancel_url: `${process.env.NEXT_PUBLIC_HOST}?result=cancelled`,
-    };
-    const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
-        params
-    );
-    console.log(requestUrl);
+  const params: Stripe.Checkout.SessionCreateParams = {
+    payment_method_types: ['card'],
+    line_items: [
+      {
+        price: String(product.default_price),
+        quantity: 1
+      }
+    ],
+    mode: 'subscription',
+    success_url: `${process.env.NEXT_PUBLIC_HOST}?result=success`,
+    cancel_url: `${process.env.NEXT_PUBLIC_HOST}?result=cancelled`
+  }
+  const checkoutSession: Stripe.Checkout.Session =
+    await stripe.checkout.sessions.create(params)
+  console.log(requestUrl)
   return new Response(String(checkoutSession.id), {
     status: 200
   })

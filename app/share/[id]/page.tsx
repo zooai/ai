@@ -26,9 +26,9 @@ export async function generateMetadata({
 }
 
 export default function SharePage({ params }: SharePageProps) {
-  let chat: any = null;
+  let chat: any = null
   getSharedChat(params.id).then(res => {
-    chat = res;
+    chat = res
   })
 
   if (!chat || !chat?.sharePath) {
