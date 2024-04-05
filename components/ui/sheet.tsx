@@ -16,11 +16,7 @@ const SheetPortal = ({
   children,
   ...props
 }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal
-    {...props}
-  >
-    {children}
-  </SheetPrimitive.Portal>
+  <SheetPrimitive.Portal {...props}>{children}</SheetPrimitive.Portal>
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 

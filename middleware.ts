@@ -37,7 +37,7 @@ export async function middleware(req: NextRequest) {
   // console.log();
   if (
     !session &&
-    (req.url.includes('/chat') || req.url.slice(-1) == '/')
+    (req.url.slice(-1) == '/')
   ) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/home'

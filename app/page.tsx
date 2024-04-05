@@ -1,9 +1,9 @@
 import { nanoid } from '@/lib/utils'
 import { Chat } from '@/components/chat'
-import { Navbar }  from '@/components/navbar'
-import * as React from 'react';
+import { Navbar } from '@/components/navbar'
+import * as React from 'react'
 // import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify'
 export const runtime = 'edge'
 
 export default function IndexPage() {
@@ -19,10 +19,12 @@ export default function IndexPage() {
   //     }
   //   }
   // }, [router]);
-  return <div className='flex flex-col'>
+  return (
+    <div className="flex flex-col">
       {/* @ts-ignore */}
       <Navbar />
       <ToastContainer />
       <Chat id={id} />
     </div>
+  )
 }

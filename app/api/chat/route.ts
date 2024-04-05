@@ -1,7 +1,6 @@
 import 'server-only'
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { Configuration, OpenAIApi } from 'openai-edge'
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { Database } from '@/lib/db_types'
 
@@ -17,23 +16,19 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 export async function POST(req: Request) {
-  const cookieStore = cookies()
-  const supabase = createRouteHandlerClient<Database>({
-    cookies: () => cookieStore
-  })
   const json = await req.json()
   const { messages, previewToken } = json
-  const userId = (await auth({ cookieStore }))?.user.id
+  console.log(json);
 
-  if (!userId) {
-    return new Response('Unauthorized', {
-      status: 401
-    })
-  }
+  // if (!userId) {
+  //   return new Response('Unauthorized', {
+  //     status: 401
+  //   })
+  // }
 
-  if (previewToken) {
-    configuration.apiKey = previewToken
-  }
+  // if (previewToken) {
+  //   configuration.apiKey = previewToken
+  // }
 
   const res = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
@@ -51,7 +46,7 @@ export async function POST(req: Request) {
       const payload = {
         id,
         title,
-        userId,
+        "this is test": String,
         createdAt,
         path,
         messages: [
@@ -63,7 +58,7 @@ export async function POST(req: Request) {
         ]
       }
       // Insert chat into database.
-      await supabase.from('chats').upsert({ id, payload }).throwOnError()
+      // await supabase.from('chats').upsert({ id, payload }).throwOnError()
     }
   })
 

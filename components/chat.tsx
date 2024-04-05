@@ -34,7 +34,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   )
   const [previewTokenDialog, setPreviewTokenDialog] = useState(IS_PREVIEW)
   const [previewTokenInput, setPreviewTokenInput] = useState(previewToken ?? '')
-  const { messages, append, reload, stop, isLoading, input, setInput } =
+  const { messages, append, reload, stop, isLoading, input, setInput, handleSubmit } =
     useChat({
       initialMessages,
       id,
@@ -48,12 +48,24 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         }
       }
     })
+
   return (
     <div className="relative h-[calc(100vh-64px)]">
-      <video autoPlay loop muted playsInline className="w-full h-full object-cover absolute -z-10">
-        <source src="bg_chat.mp4"  type="video/mp4"/>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover absolute -z-10"
+      >
+        <source src="bg_chat.mp4" type="video/mp4" />
       </video>
-      <div className={cn('pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto', className)}>
+      <div
+        className={cn(
+          'pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto',
+          className
+        )}
+      >
         {messages.length ? (
           <>
             <ChatList messages={messages} />
@@ -72,6 +84,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         messages={messages}
         input={input}
         setInput={setInput}
+        handleSubmit={handleSubmit}
       />
 
       <Dialog open={previewTokenDialog} onOpenChange={setPreviewTokenDialog}>
