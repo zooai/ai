@@ -3,20 +3,20 @@ import { Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
 
 import '@/app/globals.css'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { fontInter } from '@/lib/fonts'
-import GoogleAnalytics  from './analytics';
+import GoogleAnalytics from './analytics'
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { Providers } from '@/components/providers'
 // import Header  from '@/components/header'
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 // const Header = dynamic(import {Header} from '@/components/header', {
 //   ssr: false, // Disable server-side rendering for this component
 // });
 const Header = dynamic(() => import('@/components/header'), {
-  ssr: false, // Disable server-side rendering for this component
+  ssr: false // Disable server-side rendering for this component
 })
 export const metadata: Metadata = {
   metadataBase: new URL('https://ai.zoolabs.io'),
@@ -42,15 +42,15 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning style={{scrollBehavior:'smooth'}}>
+    <html
+      lang="en"
+      className="scroll-smooth"
+      suppressHydrationWarning
+      style={{ scrollBehavior: 'smooth' }}
+    >
       <head />
-      <body
-        className={cn(
-          'font-inter',
-          fontInter.variable,
-        )}
-      >
-        <GoogleAnalytics ga_id='G-QHHLV2FMT9' />
+      <body className={cn('font-inter', fontInter.variable)}>
+        <GoogleAnalytics ga_id="G-QHHLV2FMT9" />
         <Toaster />
         <Providers attribute="class" defaultTheme="dark" enableSystem>
           <div className="w-full flex min-h-screen flex-col">

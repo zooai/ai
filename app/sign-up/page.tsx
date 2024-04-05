@@ -1,18 +1,17 @@
-"use client"
+'use client'
 import { LoginButton } from '@/components/login-button'
 import { LoginForm } from '@/components/login-form'
 import { Separator } from '@/components/ui/separator'
-import { auth } from "../../firebase/firebase"
+import { auth } from '../../firebase/firebase'
 import { redirect, useRouter } from 'next/navigation'
 import Header from '@/components/header'
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
-const ModelViewer = dynamic(() => import("@/components/ModelViewer"), {
-  ssr: false,
-});
+const ModelViewer = dynamic(() => import('@/components/ModelViewer'), {
+  ssr: false
+})
 export default function SignInPage() {
-
   const [authuser, setAuthuser] = useState(null)
   const router = useRouter()
   useEffect(() => {
@@ -25,16 +24,17 @@ export default function SignInPage() {
     })
   }, [])
   if (authuser) {
-    router.push("/")
+    router.push('/')
   }
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col">
       <Header />
-      <div className='flex min-h-screen max-md:flex-col'>
-        <div className='w-full max-md:w-3/5 max-md:mx-auto max-md:mt-[80px] max-h-screen bg-[#18181b] max-md:bg-transparent'>
-          <ModelViewer className='w-full aspect-square'
-            usdz='https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.usdz'
+      <div className="flex min-h-screen max-md:flex-col">
+        <div className="w-full max-md:w-3/5 max-md:mx-auto max-md:mt-[80px] max-h-screen bg-[#18181b] max-md:bg-transparent">
+          <ModelViewer
+            className="w-full aspect-square"
+            usdz="https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.usdz"
             glb="https://zoo.ngo/models/Elephant/ELEPHANT_ADULT.glb"
             disable_zoom={true}
           ></ModelViewer>

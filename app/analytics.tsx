@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script'
 
 const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
   <>
@@ -16,9 +16,9 @@ const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
           gtag('js', new Date());
 
           gtag('config', '${ga_id}');
-        `,
+        `
       }}
     ></Script>
   </>
-);
-export default GoogleAnalytics;
+)
+export default GoogleAnalytics

@@ -17,17 +17,22 @@ import { SidebarFooter } from '@/components/sidebar-footer'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 const Menubar = dynamic(() => import('@/components/menubar'), {
-    ssr: false, // Disable server-side rendering for this component
-  })
+  ssr: false // Disable server-side rendering for this component
+})
 // import { Menubar } from '@/components/menubar'
 import { cookies } from 'next/headers'
 
-export async function Navbar() {
+export function Navbar() {
   const cookieStore = cookies()
-  const session = await auth({ cookieStore })
-  console.log("session:",session)
+  let session: any = null;
+
+  auth({ cookieStore }).then((res) => {
+    session = res
+  })
+
+  console.log('session:', session)
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b from-background/10 via-background/50 to-background/80 px-4 backdrop-blur-xl">
       <div className="flex items-center">
@@ -41,8 +46,8 @@ export async function Navbar() {
               <ThemeToggle />
               <ClearHistory clearChats={clearChats} />
             </SidebarFooter> */}
-            { /* @ts-ignore */}
-            <Menubar user={session?.user}/>
+            {/* @ts-ignore */}
+            <Menubar user={session?.user} />
           </Sidebar>
         ) : (
           <Link href="/" target="_blank" rel="nofollow">

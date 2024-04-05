@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
@@ -7,6 +7,9 @@ import { Chat } from '@/components/chat'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase/firebase'
+import { getDocs, where, query } from "firebase/firestore"
+import { docRef, db } from '@/firebase/firebase'
+import { type Chats } from '@/lib/types'
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
@@ -20,21 +23,6 @@ export interface ChatPageProps {
 // export async function generateMetadata({
 //   params
 // }: ChatPageProps): Promise<Metadata> {
-//   // const [authuser, setAuthuser] = useState(null)
-//   // useEffect(() => {
-//   //   const list = onAuthStateChanged(auth, (user: any) => {
-//   //     if (user) {
-//   //       setAuthuser(user)
-//   //     } else {
-//   //       setAuthuser(null)
-//   //     }
-//   //   })
-//   // }, [])
-
-//   // if (!authuser) {
-//   //   return {}
-//   // }
-
 //   const chat = await getChat(params.id)
 //   return {
 //     title: chat?.title.toString().slice(0, 50) ?? 'Chat'
@@ -43,6 +31,8 @@ export interface ChatPageProps {
 
 export default function ChatPage({ params }: ChatPageProps) {
   const [authuser, setAuthuser] = useState(null)
+  const id = params.id;
+  let chat: any = null
   useEffect(() => {
     const list = onAuthStateChanged(auth, (user: any) => {
       if (user) {
@@ -53,23 +43,16 @@ export default function ChatPage({ params }: ChatPageProps) {
     })
   }, [])
 
+  useEffect(() => {
+    if (authuser)
+      getChatData(id);
+  }, [authuser, id])
 
-  if (!authuser) {
-    redirect(`/sign-in?next=/chat/${params.id}`)
+  const getChatData = async (id: string) => {
+    const q = query(docRef, where('user_id', '==', id))
+    const snaps = await getDocs(q)  
+    chat = snaps?.docs[0].data().payload as Chats
   }
 
-  let chat: any = null;
-  getChat(params.id).then(res => {
-    chat = res;
-  })
-
-  if (!chat) {
-    notFound()
-  }
-
-  if (chat?.userId !== authuser) {
-    notFound()
-  }
-
-  return <Chat id={chat.id} initialMessages={chat.messages} />
+  return <Chat id={chat?.id} initialMessages={chat?.messages} />
 }

@@ -16,6 +16,7 @@ export interface ChatPanelProps
     | 'stop'
     | 'input'
     | 'setInput'
+    | 'handleSubmit'
   > {
   id?: string
 }
@@ -28,7 +29,8 @@ export function ChatPanel({
   reload,
   input,
   setInput,
-  messages
+  messages,
+  handleSubmit
 }: ChatPanelProps) {
   return (
     <div className="fixed inset-x-0 bottom-0">
@@ -60,12 +62,13 @@ export function ChatPanel({
         <div className="space-y-4 max-sm:border-t bg-transparent  px-4 py-2 md:py-4">
           <PromptForm
             onSubmit={async value => {
-              await append({
-                id,
-                content: value,
-                role: 'user'
-              })
-            }}
+                await append({
+                  id: id,
+                  content: value,
+                  role: 'user'
+                })
+              }
+            }
             input={input}
             setInput={setInput}
             isLoading={isLoading}
