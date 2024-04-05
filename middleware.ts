@@ -36,8 +36,7 @@ export async function middleware(req: NextRequest) {
   // }
   // console.log();
   if (
-    !session &&
-    (req.url.slice(-1) == '/')
+    !session
   ) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/home'
