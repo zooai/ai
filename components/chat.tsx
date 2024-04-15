@@ -16,10 +16,11 @@ import {
   DialogHeader,
   DialogTitle
 } from '@/components/ui/dialog'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { toast } from 'react-hot-toast'
+import { videoRef, reference, DownloadURL } from '@/firebase/firebase'
 
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {
@@ -34,7 +35,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   )
   const [previewTokenDialog, setPreviewTokenDialog] = useState(IS_PREVIEW)
   const [previewTokenInput, setPreviewTokenInput] = useState(previewToken ?? '')
-  const { messages, append, reload, stop, isLoading, input, setInput, handleSubmit } =
+  const { messages, append, reload, stop, isLoading, input, setInput, setMessages} =
     useChat({
       initialMessages,
       id,
@@ -49,17 +50,70 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       }
     })
 
+  const [emotion, setEmotion] = useState('');
+  const [relact, setRelact] = useState('');
+  const [videoSource, setVideoSource] = useState<string | undefined>(undefined);
+  const [relactTime, setRelactTime] = useState(0);
+  
+  useEffect(() => {
+    if (messages.length) {
+      if (messages[messages.length - 1].role === "assistant") {
+        if (messages[messages.length - 1].content.split('emotion: ').length == 2) {
+          setEmotion(messages[messages.length - 1].content.split('emotion: ')[1])
+          messages[messages.length - 1].content = messages[messages.length - 1].content.split('emotion: ')[0]
+        }
+      }
+      setMessages(messages)
+      setRelactTime(0)
+    }
+  }, [messages])
+
+  
+  useEffect(() => {
+    if (emotion !== '') {
+      const source = '/emotion/' + emotion + '.mp4'
+      getURL(source)
+    }
+  }, [emotion])
+  
+  useEffect(() => {
+    if (relact !== '') {
+      const source = '/static/' + relact + '.mp4'
+      getURL(source)
+    }
+  }, [relact])
+
+  useEffect(() => {
+    const relactInteral: NodeJS.Timer = setInterval(() => {
+      setRelactTime(relactTime + 1)
+      if (relactTime == 30) {
+        let rand: number = Math.random()
+        setRelact('relactation' + Math.floor(rand * 10) % 5)
+        setRelactTime(0)
+      }
+    }, 1000)
+
+    return () => clearInterval(relactInteral)
+  }, [relactTime])
+  
+  useEffect(() => {
+    getURL('/static/relactation0.mp4');
+  }, [])
+  
+  const getURL = async (name: string) => {
+    const url = await DownloadURL(reference(videoRef, name))
+    setVideoSource(url);
+  }
+
   return (
     <div className="relative h-[calc(100vh-64px)]">
       <video
         autoPlay
         loop
         muted
-        playsInline
         className="w-full h-full object-cover absolute -z-10"
-      >
-        <source src="bg_chat.mp4" type="video/mp4" />
-      </video>
+        src={videoSource}
+      />
       <div
         className={cn(
           'pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto',
@@ -68,7 +122,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       >
         {messages.length ? (
           <>
-            <ChatList messages={messages} />
+            <ChatList messages={messages} setMessages={setMessages}/>
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
         ) : (
@@ -84,7 +138,6 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         messages={messages}
         input={input}
         setInput={setInput}
-        handleSubmit={handleSubmit}
       />
 
       <Dialog open={previewTokenDialog} onOpenChange={setPreviewTokenDialog}>

@@ -16,7 +16,6 @@ export interface ChatPanelProps
     | 'stop'
     | 'input'
     | 'setInput'
-    | 'handleSubmit'
   > {
   id?: string
 }
@@ -29,8 +28,7 @@ export function ChatPanel({
   reload,
   input,
   setInput,
-  messages,
-  handleSubmit
+  messages
 }: ChatPanelProps) {
   return (
     <div className="fixed inset-x-0 bottom-0">

@@ -23,9 +23,9 @@ export default function SignInPage() {
       }
     })
   }, [])
-  if (authuser) {
-    router.push('/')
-  }
+  // if (authuser) {
+  //   router.push('/')
+  // }
 
   return (
     <div className="flex flex-col">
