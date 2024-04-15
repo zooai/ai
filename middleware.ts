@@ -3,20 +3,31 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { auth } from "./firebase/firebase"
 import { onAuthStateChanged } from 'firebase/auth'
+
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
-
-
-
-
-
-
+  // console.log(req);
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     const uid = user.uid;
+  //   } else {
+  //     const redirectUrl = req.nextUrl.clone()
+  //     redirectUrl.pathname = '/home'
+  //     return NextResponse.redirect(redirectUrl)
+  //   }
+  // })
+  
+  if (req.url.slice(-1) == '/') {
+    const redirectUrl = req.nextUrl.clone()
+    redirectUrl.pathname = '/home'
+    return NextResponse.redirect(redirectUrl)
+  }
   // Create a Supabase client configured to use cookies
-  const supabase = createMiddlewareClient({ req, res })
+  // const supabase = createMiddlewareClient({ req, res })
 
-  // Refresh session if expired - required for Server Components
-  // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
-  const { data: { session }, error } = await supabase.auth.getSession()
+  // // Refresh session if expired - required for Server Components
+  // // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  // const { data: { session }, error } = await supabase.auth.getSession()
   // if (error) {
   //   // const { error, data } = await supabase.auth.refreshSession();
   //   return ;
@@ -35,15 +46,15 @@ export async function middleware(req: NextRequest) {
   //   return NextResponse.redirect(redirectUrl)
   // }
   // console.log();
-  if (
-    !session &&
-    (req.url.slice(-1) == '/')
-  ) {
-    const redirectUrl = req.nextUrl.clone()
-    redirectUrl.pathname = '/home'
-    // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
-    return NextResponse.redirect(redirectUrl)
-  }
+
+  // if (
+  //    !session && (req.url.slice(-1) == '/')
+  // ) {
+  //   const redirectUrl = req.nextUrl.clone()
+  //   redirectUrl.pathname = '/home'
+  //   // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
+  //   return NextResponse.redirect(redirectUrl)
+  // }
 
   return res
 }

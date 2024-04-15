@@ -1,15 +1,32 @@
 import { type Message } from 'ai'
+import { type UseChatHelpers } from 'ai/react'
 
 import { Separator } from '@/components/ui/separator'
 import { ChatMessage } from '@/components/chat-message'
 
-export interface ChatList {
-  messages: Message[]
+import { useEffect, useState } from 'react'
+
+export interface ChatList extends Pick<
+  UseChatHelpers,
+  | 'setMessages'
+  >{
+    messages: Message[]
 }
 
-export function ChatList({ messages }: ChatList) {
+export function ChatList({ messages, setMessages }: ChatList) {
   if (!messages.length) {
     return null
+  } else {
+    messages.map((message, index) => {
+      if (message.role === 'assistant') {
+        try{
+          message.content = JSON.parse(message.content).answer
+        } catch {
+
+        }
+      }
+    })
+    setMessages(messages);
   }
 
   return (
