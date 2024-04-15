@@ -2,7 +2,8 @@ import * as React from 'react'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
-import { auth } from '@/auth'
+// import { auth } from '@/auth'
+import { auth } from '@/firebase/firebase'
 import { clearChats } from '@/app/actions'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sidebar } from '@/components/sidebar'
@@ -25,18 +26,12 @@ const Menubar = dynamic(() => import('@/components/menubar'), {
 import { cookies } from 'next/headers'
 
 export function Navbar() {
-  const cookieStore = cookies()
-  let session: any = null;
+  const user  = auth.currentUser;
 
-  auth({ cookieStore }).then((res) => {
-    session = res
-  })
-
-  console.log('session:', session)
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b from-background/10 via-background/50 to-background/80 px-4 backdrop-blur-xl">
       <div className="flex items-center">
-        {session?.user ? (
+        {user ? (
           <Sidebar>
             {/* <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
               { @ts-ignore }
@@ -47,7 +42,7 @@ export function Navbar() {
               <ClearHistory clearChats={clearChats} />
             </SidebarFooter> */}
             {/* @ts-ignore */}
-            <Menubar user={session?.user} />
+            <Menubar user={user} />
           </Sidebar>
         ) : (
           <Link href="/" target="_blank" rel="nofollow">
@@ -57,8 +52,8 @@ export function Navbar() {
         )}
         <div className="flex items-center">
           <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
-          {session?.user ? (
-            <UserMenu user={session.user} />
+          {user ? (
+            <UserMenu user={user} />
           ) : (
             <Button variant="link" asChild className="-ml-2">
               <Link href="/sign-in">Login</Link>
