@@ -129,33 +129,30 @@ export function LoginForm({
 
       const credentials = await signInWithPopup(auth, googleAuth)
       const user = credentials.user
-      console.log(user.uid)
 
       if (user) {
         const idToken = await user.getIdToken()
         localStorage.setItem('token', idToken)
-        toast.success('Signin successfully!')
-
-        const uid = user.uid
-
-        const q = query(docRef, where('user_id', '==', uid))
+        
+        const q = query(docRef, where('user_id', '==', user.uid))
         const snaps = await getDocs(q)
         if (snaps.docs.length == 0) {
           let message: Message[] = [];
           await addDoc(docRef, {
-            user_id: uid,
+            user_id: user.uid,
             payload: {
               id: "",
               title: "",
               createdAt: Date.now(),
-              userId: uid,
+              userId: user.uid,
               path: "",
               messages: message,
               sharePath: ""
             }
           })
         }
-        router.push('/chat/' + uid)
+        toast.success('Signin successfully!')
+        router.push('/chat/' + user.uid)
       }
     } catch (error: any) {
       if (error.code === 'auth/email-already-in-use') {
@@ -181,26 +178,24 @@ export function LoginForm({
         localStorage.setItem('token', idToken)
         toast.success('Signin successfully!')
         
-        const uid = user.uid
-
-        const q = query(docRef, where('user_id', '==', uid))
+        const q = query(docRef, where('user_id', '==', user.uid))
         const snaps = await getDocs(q)
         if (snaps.docs.length == 0) {
           let message: Message[] = [];
           await addDoc(docRef, {
-            user_id: uid,
+            user_id: user.uid,
             payload: {
               id: "",
               title: "",
               createdAt: Date.now(),
-              userId: uid,
+              userId: user.uid,
               path: "",
               messages: message,
               sharePath: ""
             }
           })
         }
-        router.push('/chat/' + uid)
+        router.push('/chat/' + user.uid)
       }
     } catch (error: any) {
       if (error.code === 'auth/email-already-in-use') {
@@ -226,7 +221,25 @@ export function LoginForm({
         const idToken = await user.getIdToken()
         localStorage.setItem('token', idToken)
         toast.success('Signin successfully!')
-        router.push('/')
+        
+        const q = query(docRef, where('user_id', '==', user.uid))
+        const snaps = await getDocs(q)
+        if (snaps.docs.length == 0) {
+          let message: Message[] = [];
+          await addDoc(docRef, {
+            user_id: user.uid,
+            payload: {
+              id: "",
+              title: "",
+              createdAt: Date.now(),
+              userId: user.uid,
+              path: "",
+              messages: message,
+              sharePath: ""
+            }
+          })
+        }
+        router.push('/chat/' + user.uid)
       }
     } catch (error: any) {
       if (error.code === 'auth/email-already-in-use') {

@@ -23,10 +23,10 @@ export default function SignInPage() {
     })
   }, [])
 
-  useEffect(() => {
-    if (authuser)
-      router.push('/')
-  }, [authuser])
+  // useEffect(() => {
+  //   if (authuser)
+  //     router.push('/')
+  // }, [authuser])
 
   return (
     <div className="flex flex-col">

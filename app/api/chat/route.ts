@@ -6,6 +6,9 @@ import { Database } from '@/lib/db_types'
 
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
+import app from '@/firebase/firebase'
+import { getFirestore, doc, getDocs, setDoc, collection, query, where, addDoc} from "firebase/firestore"
+import { Interface } from 'readline'
 
 export const runtime = 'edge'
 
@@ -20,47 +23,55 @@ export async function POST(req: Request) {
   const { messages, previewToken } = json
   console.log(json);
 
-  // if (!userId) {
-  //   return new Response('Unauthorized', {
-  //     status: 401
-  //   })
-  // }
+  const configHeader = {
+    headers: {
+      'Content-Type': 'application/json',
+      Site: "trina_demo_lux",
+    },
+  }
 
-  // if (previewToken) {
-  //   configuration.apiKey = previewToken
-  // }
+  for (let i = 0; i < messages.length; i ++) {
+    messages[i].content = [{
+      type: "text",
+      text: messages[i].content
+    }];
+  }
 
-  const res = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
-    messages,
-    temperature: 0.7,
-    stream: true
-  })
+  const question = messages[messages.length - 1].content[0].text;
+  const domain = true;
+  const useGpt4 = true;
+  const adminChatbot = false;
+  const agent = "72b890ee-c76e-42e8-a7b1-fe78dbf8ac49";
+  const temperature = 1;
 
-  const stream = OpenAIStream(res, {
-    async onCompletion(completion) {
-      const title = json.messages[0].content.substring(0, 100)
-      const id = json.id ?? nanoid()
-      const createdAt = Date.now()
-      const path = `/chat/${id}`
-      const payload = {
-        id,
-        title,
-        "this is test": String,
-        createdAt,
-        path,
-        messages: [
-          ...messages,
-          {
-            content: completion,
-            role: 'assistant'
-          }
-        ]
-      }
-      // Insert chat into database.
-      // await supabase.from('chats').upsert({ id, payload }).throwOnError()
-    }
-  })
+  try {
+    const response = await fetch('https://api.lux.chat/chatbot/question', {
+      method: 'post',
+      ...configHeader,
+      body: JSON.stringify({
+        question,
+        domain,
+        useGpt4,
+        adminChatbot,
+        messages,
+        agent,
+      }),
+    })
+    
+    return response;
+  } catch {
+    const response = { status: 400, message: 'Data fetch error' };
+    return response;
+  }
 
-  return new StreamingTextResponse(stream)
+}
+
+const scrollToBottom = (containerID: string) => {
+  const container = document.getElementById(containerID)
+  if (container) {
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
 }

@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from "firebase/app";
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,4 +25,9 @@ const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0
 export const db = getFirestore(app);
 export const docRef = collection(db, 'Chats')
 export const auth = getAuth();
+export const authState = onAuthStateChanged;
+const storage = getStorage(app, "gs://zoo-labs.appspot.com");
+export const videoRef = ref(storage, '/bg_video');
+export const reference = ref;
+export const DownloadURL = getDownloadURL;
 export default app
