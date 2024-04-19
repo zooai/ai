@@ -54,6 +54,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const [relact, setRelact] = useState('');
   const [videoSource, setVideoSource] = useState<string | undefined>(undefined);
   const [relactTime, setRelactTime] = useState(0);
+  const [hidden, setHidden] = useState(true);
   
   useEffect(() => {
     if (messages.length) {
@@ -100,9 +101,19 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
     getURL('/static/relactation0.mp4');
   }, [])
   
-  const getURL = async (name: string) => {
-    const url = await DownloadURL(reference(videoRef, name))
+  const getURL = (name: string) => {
+    // const url = await DownloadURL(reference(videoRef, name))
+    const url = '/bg_video' + name;
     setVideoSource(url);
+  }
+
+  useEffect(() => {
+    if (hidden === true)
+      setTimeout(() => {setHidden(false)}, 2000)
+  }, [hidden]);
+
+  const handleLoadStart = () => {
+    setHidden(true);
   }
 
   return (
@@ -111,9 +122,11 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         autoPlay
         loop
         muted
+        onLoadStart={handleLoadStart}
         className="w-full h-full object-cover absolute -z-10"
         src={videoSource}
       />
+      {hidden && <div id="fogOverlay" className={`w-full h-full object-cover absolute -z-10 ${hidden ? 'fogOverlay' : ''}`}></div>}
       <div
         className={cn(
           'pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto',
