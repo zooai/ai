@@ -109,7 +109,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
 
   useEffect(() => {
     if (hidden === true)
-      setTimeout(() => {setHidden(false)}, 2000)
+      setTimeout(() => {setHidden(false)}, 5000)
   }, [hidden]);
 
   const handleLoadStart = () => {
