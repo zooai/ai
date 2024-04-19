@@ -153,7 +153,7 @@ model-viewer {
 
 .fogOverlay {
   background-color: rgba(255, 255, 255, 0); /* Initial opacity set to 0 */
-  animation: fogAnimation 2s ease-out; /* Apply the animation with a duration of 0.5 seconds */
+  animation: fogAnimation 5s ease-out; /* Apply the animation with a duration of 0.5 seconds */
 }
 
 @keyframes fogAnimation {
