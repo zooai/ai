@@ -104,9 +104,6 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const getURL = (name: string) => {
     // const url = await DownloadURL(reference(videoRef, name))
     const url = '/bg_video' + name;
-  const getURL = (name: string) => {
-    // const url = await DownloadURL(reference(videoRef, name))
-    const url = '/bg_video' + name;
     setVideoSource(url);
   }
 
@@ -204,5 +201,4 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       </Dialog>
     </div>
   )
-}
 }
