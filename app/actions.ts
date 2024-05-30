@@ -33,28 +33,12 @@ export async function getChats(userId?: string | null) {
 }
 
 export const getChat = async (id: string) => {
-  console.log("this is getchat function ", id);
-  // const cookieStore = cookies()
-  // const supabase = createServerActionClient<Database>({
-  //   cookies: () => cookieStore
-  // })
-  // const { data } = await supabase
-  //   .from('chats')
-  //   .select('payload')
-  //   .eq('id', id)
-  //   .maybeSingle()
-
-  // return (data?.payload as Chat) ?? null
-
   const q = query(docRef, where('user_id', '==', id))
   const snaps = await getDocs(q)
 
   let result = null;
 
   result = await getDocs(docRef);
-  console.log(result);
-
-  console.log(result?.docs[0])
 
   return result?.docs[0]
 }

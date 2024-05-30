@@ -10,18 +10,23 @@ import Slider from '@mui/material/Slider'
 import { styled } from '@mui/material/styles'
 import Image from 'next/image'
 import Switch, { SwitchProps } from '@mui/material/Switch'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { auth } from '@/firebase/firebase'
 import { useRouter } from 'next/navigation'
 function Setting(props: any) {
   const { user, flag, event } = props
   const router = useRouter()
 
-  // Create a Supabase client configured to use cookies
-  const supabase = createClientComponentClient()
-
-  const signOut = async () => {
-    await supabase.auth.signOut()
-    router.refresh()
+  const signOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        // Sign-out successful.
+        console.log('User signed out successfully')
+      })
+      .catch(error => {
+        // An error happened.
+        console.error('Error signing out:', error)
+      })
   }
 
   function getUserInitials(name: string) {
@@ -258,21 +263,21 @@ function Setting(props: any) {
                 <FaSignOutAlt />
                 <p className="text-sm">Log out</p>
               </div>
-              {user?.user_metadata.avatar_url ? (
+              {user?.photoURL ? (
                 <Image
                   height={60}
                   width={60}
                   className="h-6 w-6 select-none rounded-full ring-1 ring-zinc-100/10 transition-opacity duration-300 hover:opacity-80"
                   src={
-                    user?.user_metadata.avatar_url
-                      ? `${user.user_metadata.avatar_url}`
+                    user?.photoURL
+                      ? `${user.photoURL}`
                       : ''
                   }
-                  alt={user.user_metadata.name ?? 'Avatar'}
+                  alt={user.displayName ?? 'Avatar'}
                 />
               ) : (
                 <div className="flex h-7 w-7 shrink-0 select-none items-center justify-center rounded-full bg-muted/50 text-xs font-medium uppercase text-muted-foreground">
-                  {getUserInitials(user?.user_metadata.name ?? user?.email)}
+                  {getUserInitials(user?.displayName ?? user?.email)}
                 </div>
               )}
             </div>
