@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import {
   FaTelegram,
@@ -17,18 +18,25 @@ import Newchat from '@/components/newchat'
 import History from '@/components/history'
 import Setting from '@/components/setting'
 import Subscription from '@/components/subscription'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || ''
 )
-function Menubar(props: any) {
+
+export default function Menubar(props: any) {
   const { user } = props
   const [flag, setFlag] = useState(0)
   const setStatus = (value: number) => {
     setFlag(value)
   }
+
+  useEffect(() => {
+    console.log(user)
+  }, [])
+
   return (
     <div className="flex flex-col justify-between min-h-screen overflow-auto">
       <div className="flex-col">
@@ -90,10 +98,8 @@ function Menubar(props: any) {
         <Newchat flag={flag} event={setStatus} />
         <History userId={user?.id} flag={flag} event={setStatus} />
         <Setting user={user} flag={flag} event={setStatus} />
-
         <Subscription user={user} flag={flag} event={setStatus} />
       </Elements>
     </div>
   )
 }
-export default Menubar
