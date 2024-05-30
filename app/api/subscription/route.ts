@@ -55,12 +55,9 @@ export async function GET(request: Request) {
     success_url: `${process.env.NEXT_PUBLIC_HOST}?result=success`,
     cancel_url: `${process.env.NEXT_PUBLIC_HOST}?result=cancelled`
   }
-  const checkoutSession: Stripe.Checkout.Session =
-    await stripe.checkout.sessions.create(params)
-  console.log(requestUrl)
-  return new Response(String(checkoutSession.id), {
-    status: 200
-  })
+  const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
+  console.log(checkoutSession)
+  return new Response(String(checkoutSession.id), { status: 200 })
 
   // URL to redirect to after sign in process completes
   // return NextResponse.redirect(requestUrl.origin)
