@@ -20,7 +20,6 @@ import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { toast } from 'react-hot-toast'
-import { videoRef, reference, DownloadURL } from '@/firebase/firebase'
 
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {
@@ -52,8 +51,10 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
 
   const [emotion, setEmotion] = useState('');
   const [relact, setRelact] = useState('');
-  const [videoSource, setVideoSource] = useState<string | undefined>(undefined);
+  const [videoSource1, setVideoSource1] = useState<string | undefined>(undefined);
+  const [videoSource2, setVideoSource2] = useState<string | undefined>(undefined);
   const [relactTime, setRelactTime] = useState(0);
+  const [hidden, setHidden] = useState(true);
   
   useEffect(() => {
     if (messages.length) {
@@ -100,9 +101,22 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
     getURL('/static/relactation0.mp4');
   }, [])
   
-  const getURL = async (name: string) => {
-    const url = await DownloadURL(reference(videoRef, name))
+  const getURL = (name: string) => {
+    // const url = await DownloadURL(reference(videoRef, name))
+    const url = '/bg_video' + name;
     setVideoSource(url);
+  }
+
+  const setVideoSource = (url: string) => {
+    if (hidden) {
+      setVideoSource1(url);
+    } else {
+      setVideoSource2(url);
+    }
+  }
+
+  const handleLoadedData = () => {
+    setHidden(!hidden);
   }
 
   return (
@@ -111,9 +125,19 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         autoPlay
         loop
         muted
-        className="w-full h-full object-cover absolute -z-10"
-        src={videoSource}
+        onLoadedData={handleLoadedData}
+        className={`w-full h-full object-cover absolute -z-10 ${hidden ? 'fogOverlay2' : 'fogOverlay1'}`}
+        src={videoSource1}
       />
+      <video
+        autoPlay
+        loop
+        muted
+        onLoadedData={handleLoadedData}
+        className={`w-full h-full object-cover absolute -z-10 ${hidden ? 'fogOverlay1' : 'fogOverlay2'}`}
+        src={videoSource2}
+      />
+      {/* {hidden && <div id="fogOverlay" className={`w-full h-full object-cover absolute -z-10 ${hidden ? 'fogOverlay' : ''}`}></div>} */}
       <div
         className={cn(
           'pt-4 md:pt-10 sm:max-h-[calc(100vh-204px)] max-h-[calc(100vh-225px)] overflow-y-auto',
