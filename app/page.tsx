@@ -1,30 +1,13 @@
-import { nanoid } from '@/lib/utils'
 import { Chat } from '@/components/chat'
-import { Navbar } from '@/components/navbar'
-import * as React from 'react'
-// import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify'
-export const runtime = 'edge'
+import { nanoid } from 'ai'
+import { AI } from '@/app/actions'
+export const maxDuration = 60
 
-export default function IndexPage() {
+export default function Page() {
   const id = nanoid()
-  // const router = useRouter();
-  // React.useEffect(() => {
-  //   if (router.isReady) {
-  //     const result = router.query.result;
-  //     if(result=='success'){
-  //       toast.success("Thank you for donating!");
-  //     }else if(result=='cancelled') {
-  //       toast.warning("Donation is cancelled!!!");
-  //     }
-  //   }
-  // }, [router]);
   return (
-    <div className="flex flex-col">
-      {/* @ts-ignore */}
-      <Navbar />
-      <ToastContainer />
+    <AI initialAIState={{ chatId: id, messages: [] }}>
       <Chat id={id} />
-    </div>
+    </AI>
   )
 }

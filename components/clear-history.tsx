@@ -1,11 +1,6 @@
 'use client'
 
-import * as React from 'react'
-import { useRouter } from 'next/navigation'
-import { toast } from 'react-hot-toast'
-
-import { ServerActionResult } from '@/lib/types'
-import { Button } from '@/components/ui/button'
+import { useState, useTransition } from 'react'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,31 +12,31 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger
 } from '@/components/ui/alert-dialog'
-import { IconSpinner } from '@/components/ui/icons'
+import { Button } from '@/components/ui/button'
+import { clearChats } from '@/lib/actions/chat'
+import { toast } from 'sonner'
+import { Spinner } from './ui/spinner'
 
-interface ClearHistoryProps {
-  clearChats: () => ServerActionResult<void>
+type ClearHistoryProps = {
+  empty: boolean
 }
 
-export function ClearHistory({ clearChats }: ClearHistoryProps) {
-  const [open, setOpen] = React.useState(false)
-  const [isPending, startTransition] = React.useTransition()
-  const router = useRouter()
-
+export function ClearHistory({ empty }: ClearHistoryProps) {
+  const [open, setOpen] = useState(false)
+  const [isPending, startTransition] = useTransition()
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
-        <Button variant="ghost" disabled={isPending}>
-          {isPending && <IconSpinner className="mr-2" />}
-          Clear history
+        <Button variant="outline" className="w-full" disabled={empty}>
+          Clear History
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete your chat history and remove your data
-            from our servers.
+            This action cannot be undone. This will permanently delete your
+            history and remove your data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -52,19 +47,16 @@ export function ClearHistory({ clearChats }: ClearHistoryProps) {
               event.preventDefault()
               startTransition(async () => {
                 const result = await clearChats()
-
-                if (result && 'error' in result) {
+                if (result?.error) {
                   toast.error(result.error)
-                  return
+                } else {
+                  toast.success('History cleared')
                 }
-
                 setOpen(false)
-                router.push('/')
               })
             }}
           >
-            {isPending && <IconSpinner className="mr-2 animate-spin" />}
-            Delete
+            {isPending ? <Spinner /> : 'Clear'}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

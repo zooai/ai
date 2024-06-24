@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fa'
 import { BsMedium } from 'react-icons/bs'
 import Newchat from '@/components/newchat'
-import History from '@/components/history'
+// import History from '@/components/history'
 import Setting from '@/components/setting'
 import Subscription from '@/components/subscription'
 import React, { useEffect, useState } from 'react'
@@ -96,7 +96,7 @@ export default function Menubar(props: any) {
       </div>
       <Elements stripe={stripePromise}>
         <Newchat flag={flag} event={setStatus} />
-        <History userId={user?.id} flag={flag} event={setStatus} />
+        {/* <History userId={user?.id} flag={flag} event={setStatus} /> */}
         <Setting user={user} flag={flag} event={setStatus} />
         <Subscription user={user} flag={flag} event={setStatus} />
       </Elements>

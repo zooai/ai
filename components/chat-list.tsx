@@ -2,7 +2,7 @@ import { type Message } from 'ai'
 import { type UseChatHelpers } from 'ai/react'
 
 import { Separator } from '@/components/ui/separator'
-import { ChatMessage } from '@/components/chat-message'
+import { ChatMessages } from '@/components/chat-messages'
 
 import { useEffect, useState } from 'react'
 

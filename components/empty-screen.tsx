@@ -1,46 +1,46 @@
-import { UseChatHelpers } from 'ai/react'
-
 import { Button } from '@/components/ui/button'
-import { ExternalLink } from '@/components/external-link'
-import { IconArrowRight } from '@/components/ui/icons'
+import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: 'Explain technical concepts',
-    message: `What is a "serverless function"?`
+    heading: "What's new with ZooAI?",
+    message: "What's new with ZooAI?"
   },
   {
-    heading: 'Summarize an article',
-    message: 'Summarize the following article for a 2nd grader: \n'
+    heading: 'Why is ZooAI growing rapidly?',
+    message: 'Why is ZooAI growing rapidly?'
   },
   {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
+    heading: 'How does the ZooAI work?',
+    message: 'How does the ZooAI SDK work?'
+  },
+  {
+    heading: 'ZooAI vs other AI ChatBot',
+    message: 'ZooAI vs other AI ChatBot'
   }
 ]
-
-export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
+export function EmptyScreen({
+  submitMessage,
+  className
+}: {
+  submitMessage: (message: string) => void
+  className?: string
+}) {
   return (
-    <div className="mx-auto max-w-2xl px-4">
-      <div className="rounded-lg border bg-[#0088cc35] p-8">
-        <h1 className="mb-2 text-lg font-semibold">
-          Welcome to the ZOO AI Chatbot!
-        </h1>
-        <p className="mb-2 leading-normal text-muted-foreground">
-          ZOO is a leading AI chatbot designed for kids.
-        </p>
-        <p className="leading-normal text-muted-foreground">
-          You can start a conversation here or try the following examples:
-        </p>
-        <div className="mt-4 flex flex-col items-start space-y-2">
+    <div className={`mx-auto w-full transition-all ${className}`}>
+      <div className=" bg-transparent text-muted p-2">
+        <div className="mt-4 flex flex-col items-start space-y-2 mb-4">
           {exampleMessages.map((message, index) => (
             <Button
               key={index}
               variant="link"
               className="h-auto p-0 text-base"
-              onClick={() => setInput(message.message)}
+              name={message.message}
+              onClick={async () => {
+                submitMessage(message.message)
+              }}
             >
-              <IconArrowRight className="mr-2 text-muted-foreground" />
+              <ArrowRight size={16} className="mr-2 text-muted-foreground" />
               {message.heading}
             </Button>
           ))}

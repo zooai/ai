@@ -1,32 +1,49 @@
-import { FaArrowLeft } from 'react-icons/fa'
-import * as React from 'react'
-import { clearChats } from '@/app/actions'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { ClearHistory } from '@/components/clear-history'
-import { SidebarList } from '@/components/sidebar-list'
-function History(props: any) {
-  const { userId, flag, event } = props
-  return (
-    <div
-      className={`absolute transition-all duration-300 ${
-        flag == 2 ? 'translate-x-0' : '-translate-x-full'
-      }  bg-black z-1  w-full min-h-screen overflow-auto`}
-    >
-      <div className="flex flex-col h-screen">
-        <div className="cursor-pointer pl-4 pt-4" onClick={() => event(0)}>
-          <FaArrowLeft />
-        </div>
-        <div className="pt-8 flex space-x-4 items-center justify-between px-4">
-          <h2 className="text-md">History</h2>
-          <ClearHistory clearChats={clearChats} />
-        </div>
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from '@/components/ui/sheet'
+import { Button } from '@/components/ui/button'
+import { ChevronLeft, Menu } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { History as HistoryIcon } from 'lucide-react'
+import { HistoryList } from './history-list'
+import { Suspense } from 'react'
+import { HistorySkeleton } from './history-skelton'
 
-        <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
-          {/* @ts-ignore */}
-          <SidebarList userId={userId} />
-        </React.Suspense>
-      </div>
-    </div>
+type HistoryProps = {
+  location: 'sidebar' | 'header'
+}
+
+export function History({ location }: HistoryProps) {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          className={cn({
+            'rounded-full text-foreground/30': location === 'sidebar'
+          })}
+        >
+          {location === 'header' ? <Menu /> : <ChevronLeft size={16} />}
+        </Button>
+      </SheetTrigger>
+      <SheetContent className="w-64 rounded-tl-xl rounded-bl-xl">
+        <SheetHeader>
+          <SheetTitle className="flex items-center gap-1 text-sm font-normal mb-2">
+            <HistoryIcon size={14} />
+            History
+          </SheetTitle>
+        </SheetHeader>
+        <div className="my-2 h-full pb-12 md:pb-10">
+          <Suspense fallback={<HistorySkeleton />}>
+            <HistoryList userId="anonymous" />
+          </Suspense>
+        </div>
+      </SheetContent>
+    </Sheet>
   )
 }
-export default History

@@ -1035,6 +1035,11 @@ function IconFeatures63({ className, ...props }: React.ComponentProps<'svg'>) {
     </svg>
   )
 }
+
+function IconLogo({ className, ...props }: React.ComponentProps<'svg'>) {
+  return <>{" ▼ "}</>
+}
+
 export {
   IconEdit,
   IconNextChat,
@@ -1080,5 +1085,6 @@ export {
   IconFeatures53,
   IconFeatures61,
   IconFeatures62,
-  IconFeatures63
+  IconFeatures63,
+  IconLogo
 }

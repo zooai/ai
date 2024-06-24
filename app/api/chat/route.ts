@@ -5,7 +5,6 @@ import { cookies } from 'next/headers'
 import { Database } from '@/lib/db_types'
 
 import { auth } from '@/auth'
-import { nanoid } from '@/lib/utils'
 import app from '@/firebase/firebase'
 import { getFirestore, doc, getDocs, setDoc, collection, query, where, addDoc} from "firebase/firestore"
 import { Interface } from 'readline'
@@ -57,12 +56,13 @@ export async function POST(req: Request) {
         agent,
       }),
     })
-    
+    console.log('response3', response)
     return response;
-  } catch {
-    const response = { status: 400, message: 'Data fetch error' };
-    return response;
-  }
+  } catch(error) {
+      console.log('error', error)
+      const response = { status: 400, message: 'Data fetch error' };
+      return response;
+    }
 
 }
 
