@@ -10,13 +10,13 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyDbERRAo2sjQQ7TYsjKNT_9goinx37i11U",
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "zooai-79eff.firebaseapp.com",
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "zooai-79eff",
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "zooai-79eff.appspot.com",
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBBY_SENDER_ID || "474320787",
-    appId: process.env.NEXT_PUBLIC_FIBRARY_APP_ID || "1:474320787:web:c370d6937aaf8ce4766266",
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-5XC9XBQQ6T"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBBY_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIBRARY_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 console.log(process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
 
