@@ -25,7 +25,7 @@ export function BotMessage({ content }: { content: StreamableValue<string> }) {
       <MemoizedReactMarkdown
         rehypePlugins={[
           [rehypeExternalLinks, { target: '_blank' }],
-          rehypeKatex
+          rehypeKatex as any
         ]}
         remarkPlugins={[remarkGfm, remarkMath]}
         className="prose-sm prose-neutral prose-a:text-accent-foreground/50"

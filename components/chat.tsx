@@ -51,24 +51,10 @@ export function Chat({ id }: ChatProps) {
 
     return () => clearInterval(relactInteral)
   }, [relactTime])
-
-  useEffect(() => {
-    if (messages.length) {
-      if (messages[messages.length - 1].role === "assistant") {
-        if (messages[messages.length - 1].content.split('emotion: ').length == 2) {
-          setEmotion(messages[messages.length - 1].content.split('emotion: ')[1])
-          messages[messages.length - 1].content = messages[messages.length - 1].content.split('emotion: ')[0]
-        }
-      }
-      setRelactTime(0)
-    }
-  }, [messages])
   
   useEffect(() => {
     getURL('/static/relactation0.mp4');
   }, [])
-  console.log('message : ', messages )
-  console.log('emotion : ', emotion )
   useEffect(() => {
     if (emotion !== '') {
       const source = '/emotion/' + emotion + '.mp4'

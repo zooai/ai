@@ -36,41 +36,7 @@ export async function researcher(
     Aim to directly address the user's question, augmenting your response with insights gleaned from the search results.
     Whenever quoting or referencing information from a specific URL, always cite the source URL explicitly.
     The retrieve tool can only be used with URLs provided by the user. URLs from search results cannot be used.
-    Please match the language of the response to the user's language. Current date and time: ${currentDate}.
-    In addition please add the emotion field that including its answer's emotion at the end of the answer.
-    For Example: 
-    {
-      "answer": "Good",
-      "emotion": "Happy"
-    }
-    
-    emotsion strings are in only 24 words: [
-      Surprise,
-      Shame,
-      Satisfaction,
-      Sadness,
-      Pride,
-      Playful,
-      Love,
-      Loneliness,
-      Interest,
-      Happiness,
-      Guilt,
-      Fear,
-      Envy,
-      Disgust,
-      Disappointment,
-      Contempt,
-      Confusion,
-      Calmness,
-      Boredom,
-      Axienty,
-      Awe,
-      Amusement,
-      Adoration,
-      Admiration,
-    ]
-    `,
+    Please match the language of the response to the user's language. Current date and time: ${currentDate}`,
     messages,
     tools: getTools({
       uiStream,

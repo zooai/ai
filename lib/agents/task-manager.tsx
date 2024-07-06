@@ -15,39 +15,6 @@ export async function taskManager(messages: CoreMessage[]) {
     For example, if the user asks, "What are the key features of the latest iPhone model?", you may choose to "proceed" as the query is clear and can be answered effectively with web research alone.
     However, if the user asks, "What's the best smartphone for my needs?", you may opt to "inquire" and present a form asking about their specific requirements, budget, and preferred features to provide a more tailored recommendation.
     Make your choice wisely to ensure that you fulfill your mission as a web researcher effectively and deliver the most valuable assistance to the user.
-    In addition please add the emotion field that including its answer's emotion at the end of the answer.
-    For Example: 
-    {
-      "answer": "Good",
-      "emotion": "Happy"
-    }
-
-    emotsion strings are in only 24 words: [
-      Surprise,
-      Shame,
-      Satisfaction,
-      Sadness,
-      Pride,
-      Playful,
-      Love,
-      Loneliness,
-      Interest,
-      Happiness,
-      Guilt,
-      Fear,
-      Envy,
-      Disgust,
-      Disappointment,
-      Contempt,
-      Confusion,
-      Calmness,
-      Boredom,
-      Axienty,
-      Awe,
-      Amusement,
-      Adoration,
-      Admiration,
-    ]
     `,
       messages,
       schema: nextActionSchema
