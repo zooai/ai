@@ -1,25 +1,25 @@
-import React, { cache, useEffect, useState } from 'react'
-import HistoryItem from './history-item'
-import { Chat } from '@/lib/types'
-import { getChats } from '@/lib/actions/chat'
-import { ClearHistory } from './clear-history'
+import React, { useEffect, useState } from 'react';
+import HistoryItem from './history-item';
+import { Chat } from '@/lib/types';
+import { getChats } from '@/lib/actions/chat';
+import { ClearHistory } from './clear-history';
 
 type HistoryListProps = {
-  userId?: string
-}
+  userId?: string;
+};
 
-// Start of Selection
-export async function HistoryList({ userId }: HistoryListProps) {
-  const [chats, setChat] = useState<Chat[]>([])
+export const HistoryList: React.FC<HistoryListProps> = ({ userId }) => {
+  const [chats, setChats] = useState<Chat[]>([]);
+
+  // Function to load chats
+  const loadChats = async (userId: string | undefined) => {
+    const result: Chat[] = await getChats(userId);
+    setChats(result);
+  };
 
   useEffect(() => {
-    loadChats();
-  }, [])
-
-  const loadChats = cache(async (userId?: string) => {
-    let result: Chat[] = await getChats(userId)
-    setChat(result);
-  })
+    loadChats(userId);
+  }, [userId]);
 
   return (
     <div className="flex flex-col flex-1 space-y-3 h-full">
@@ -38,5 +38,5 @@ export async function HistoryList({ userId }: HistoryListProps) {
         <ClearHistory empty={!chats?.length} />
       </div>
     </div>
-  )
-}
+  );
+};
