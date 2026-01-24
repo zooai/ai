@@ -1,112 +1,115 @@
 'use server'
 import 'server-only'
-import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import { Database } from '@/lib/db_types'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { getDocs, where, query } from "firebase/firestore"
-
+import { prisma } from '@/lib/db'
 import { type Chats } from '@/lib/types'
-import { docRef, db } from '@/firebase/firebase'
 
 export async function getChats(userId?: string | null) {
   if (!userId) {
     return []
   }
   try {
-    const cookieStore = cookies()
-    const supabase = createServerActionClient<Database>({
-      cookies: () => cookieStore
+    const chats = await prisma.chat.findMany({
+      where: { userId },
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        messages: true,
+        sharePath: true,
+        createdAt: true,
+        userId: true
+      }
     })
-    const { data } = await supabase
-      .from('chats')
-      .select('payload')
-      .order('payload->createdAt', { ascending: false })
-      .eq('user_id', userId)
-      .throwOnError()
-
-    return (data?.map((entry: any) => entry.payload) as Chats[]) ?? []
+    return chats as unknown as Chats[]
   } catch (error) {
+    console.error('Error fetching chats:', error)
     return []
   }
 }
 
-export const getChat = async (id: string) => {
-  const q = query(docRef, where('user_id', '==', id))
-  const snaps = await getDocs(q)
-
-  let result = null;
-
-  result = await getDocs(docRef);
-
-  return result?.docs[0]
+export async function getChat(id: string, userId?: string) {
+  try {
+    const chat = await prisma.chat.findFirst({
+      where: { id, ...(userId ? { userId } : {}) }
+    })
+    return chat as unknown as Chats | null
+  } catch (error) {
+    console.error('Error fetching chat:', error)
+    return null
+  }
 }
 
 export async function removeChat({ id, path }: { id: string; path: string }) {
   try {
-    const cookieStore = cookies()
-    const supabase = createServerActionClient<Database>({
-      cookies: () => cookieStore
-    })
-    await supabase.from('chats').delete().eq('id', id).throwOnError()
-
+    await prisma.chat.delete({ where: { id } })
     revalidatePath('/')
     return revalidatePath(path)
   } catch (error) {
-    return {
-      error: 'Unauthorized'
-    }
+    return { error: 'Unauthorized' }
   }
 }
 
-export async function clearChats() {
+export async function clearChats(userId: string) {
   try {
-    const cookieStore = cookies()
-    const supabase = createServerActionClient<Database>({
-      cookies: () => cookieStore
-    })
-    await supabase.from('chats').delete().throwOnError()
+    await prisma.chat.deleteMany({ where: { userId } })
     revalidatePath('/')
     return redirect('/')
   } catch (error) {
     console.log('clear chats error', error)
-    return {
-      error: 'Unauthorized'
-    }
+    return { error: 'Unauthorized' }
   }
 }
 
 export async function getSharedChat(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerActionClient<Database>({
-    cookies: () => cookieStore
-  })
-  const { data } = await supabase
-    .from('chats')
-    .select('payload')
-    .eq('id', id)
-    .not('payload->sharePath', 'is', null)
-    .maybeSingle()
-
-  return ((data as any)?.payload as Chats) ?? null
+  try {
+    const chat = await prisma.chat.findFirst({
+      where: {
+        id,
+        sharePath: { not: null }
+      }
+    })
+    return chat as unknown as Chats | null
+  } catch (error) {
+    console.error('Error fetching shared chat:', error)
+    return null
+  }
 }
 
 export async function shareChat(chat: Chats) {
-  const payload = {
-    ...chat,
-    sharePath: `/share/${chat.id}`
+  const sharePath = `/share/${chat.id}`
+
+  try {
+    await prisma.chat.update({
+      where: { id: chat.id },
+      data: { sharePath }
+    })
+    return { ...chat, sharePath }
+  } catch (error) {
+    console.error('Error sharing chat:', error)
+    return chat
   }
+}
 
-  const cookieStore = cookies()
-  const supabase = createServerActionClient<Database>({
-    cookies: () => cookieStore
-  })
-  await supabase
-    .from('chats')
-    .update({ payload: payload as any })
-    .eq('id', chat.id)
-    .throwOnError()
-
-  return payload
+export async function saveChat(chat: Chats) {
+  try {
+    await prisma.chat.upsert({
+      where: { id: chat.id },
+      update: {
+        title: chat.title,
+        messages: chat.messages as any,
+        sharePath: chat.sharePath
+      },
+      create: {
+        id: chat.id,
+        title: chat.title,
+        userId: chat.userId,
+        messages: chat.messages as any,
+        sharePath: chat.sharePath
+      }
+    })
+  } catch (error) {
+    console.error('Error saving chat:', error)
+  }
 }
