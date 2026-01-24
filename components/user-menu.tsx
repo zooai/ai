@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { type Session } from '@supabase/auth-helpers-nextjs'
 import { auth } from '@/firebase/firebase'
 import { useRouter } from 'next/navigation'
 
