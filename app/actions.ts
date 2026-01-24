@@ -89,7 +89,7 @@ export async function getSharedChat(id: string) {
     .not('payload->sharePath', 'is', null)
     .maybeSingle()
 
-  return (data?.payload as Chats) ?? null
+  return ((data as any)?.payload as Chats) ?? null
 }
 
 export async function shareChat(chat: Chats) {
