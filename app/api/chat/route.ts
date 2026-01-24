@@ -60,8 +60,10 @@ export async function POST(req: Request) {
     
     return response;
   } catch {
-    const response = { status: 400, message: 'Data fetch error' };
-    return response;
+    return new Response(JSON.stringify({ message: 'Data fetch error' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
 }
