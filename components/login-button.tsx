@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 import { cn } from '@/lib/utils'
 import { Button, type ButtonProps } from '@/components/ui/button'
@@ -19,9 +18,8 @@ export function LoginButton({
   ...props
 }: LoginButtonProps) {
   const [isLoading, setIsLoading] = React.useState(false)
-  // Create a Supabase client configured to use cookies
-  const supabase = createClientComponentClient()
 
+  // GitHub auth disabled - will be implemented with NextAuth
   if (process.env.NEXT_PUBLIC_AUTH_GITHUB !== 'true') {
     return null
   }
@@ -31,10 +29,9 @@ export function LoginButton({
       variant="outline"
       onClick={async () => {
         setIsLoading(true)
-        await supabase.auth.signInWithOAuth({
-          provider: 'github',
-          options: { redirectTo: `${location.origin}/api/auth/callback` }
-        })
+        // TODO: Implement GitHub OAuth with NextAuth
+        console.log('GitHub login not yet implemented')
+        setIsLoading(false)
       }}
       disabled={isLoading}
       className={cn(className)}
