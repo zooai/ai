@@ -26,7 +26,7 @@ export async function getChats(userId?: string | null) {
       .eq('user_id', userId)
       .throwOnError()
 
-    return (data?.map(entry => entry.payload) as Chats[]) ?? []
+    return (data?.map((entry: any) => entry.payload) as Chats[]) ?? []
   } catch (error) {
     return []
   }
