@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: dark)', color: 'black' }
   ],
   icons: {
-    icon: '/zooLogoLight.svg',
-    shortcut: '/zooLogoLight.svg',
-    apple: '/zooLogoLight.svg'
+    icon: '/zoo-logo.svg',
+    shortcut: '/zoo-logo.svg',
+    apple: '/zoo-logo.svg'
   }
 }
 
