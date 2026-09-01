@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import '@/app/globals.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { fontInter } from '@/lib/fonts'
+import { fontSans, fontMono } from '@/lib/fonts'
 import GoogleAnalytics from './analytics'
 import { cn } from '@/lib/utils'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       style={{ scrollBehavior: 'smooth' }}
     >
       <head />
-      <body className={cn('font-inter', fontInter.variable)}>
+      <body className={cn('font-sans', fontSans.variable, fontMono.variable)}>
         <GoogleAnalytics ga_id="G-QHHLV2FMT9" />
         <Toaster />
         <Providers attribute="class" defaultTheme="dark" enableSystem>
